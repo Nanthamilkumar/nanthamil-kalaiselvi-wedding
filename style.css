@@ -439,3 +439,322 @@ body {
         padding: 14px 28px;
     }
 }
+
+/* =========================================
+   INVITATION PAGES
+   ========================================= */
+
+.invitation-page {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffaf3,
+            #f5e8d8
+        );
+
+    color: #402018;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* Main page content */
+
+.invitation-page main {
+    width: 100%;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero-section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 25px;
+}
+
+
+.hero-section .symbol {
+    font-size: 55px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-label {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #8b3a2b;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-section h1 {
+    font-size: clamp(42px, 8vw, 72px);
+
+    font-weight: normal;
+
+    line-height: 1.3;
+}
+
+
+.hero-heart {
+    font-size: 34px;
+
+    margin: 12px 0;
+}
+
+
+.hero-date {
+    margin-top: 35px;
+
+    font-size: 21px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content-section {
+    width: min(900px, 90%);
+
+    margin: 0 auto;
+
+    padding: 90px 20px;
+
+    text-align: center;
+}
+
+
+.content-section h2 {
+    font-size: clamp(30px, 5vw, 46px);
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+
+.content-section > p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   EVENT CARD
+   ========================================= */
+
+.event-card {
+    max-width: 600px;
+
+    margin: 35px auto;
+
+    padding: 45px 30px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid rgba(139, 58, 43, 0.20);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(60, 30, 15, 0.08);
+}
+
+
+.event-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+
+.event-card h3 {
+    font-size: 32px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+
+.event-card p {
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+.event-card .event-date {
+    font-size: 21px;
+
+    color: #8b3a2b;
+
+    margin-bottom: 10px;
+}
+
+
+.event-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 13px 25px;
+
+    background: #8b3a2b;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.back-section {
+    text-align: center;
+
+    padding: 50px 20px 80px;
+}
+
+
+.back-button {
+    color: #8b3a2b;
+
+    text-decoration: none;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   TAMIL PAGE
+   ========================================= */
+
+.tamil-page {
+    background:
+        radial-gradient(
+            circle at top,
+            #fff8ed,
+            #f5dfc3
+        );
+
+    color: #7b241c;
+
+    font-family:
+        "Noto Serif Tamil",
+        "Nirmala UI",
+        "Latha",
+        serif;
+}
+
+
+.tamil-page .section-label {
+    color: #9b1c1c;
+
+    letter-spacing: 1px;
+
+    text-transform: none;
+
+    font-size: 19px;
+}
+
+
+.tamil-page .hero-section {
+    border-bottom: 3px double #b8860b;
+}
+
+
+.tamil-page .content-section {
+    border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+
+.tamil-page .event-card {
+    border: 3px double #b8860b;
+
+    background: rgba(255, 248, 235, 0.8);
+}
+
+
+.tamil-page .event-card .event-date {
+    color: #9b1c1c;
+}
+
+
+.tamil-page .event-button {
+    background: #9b1c1c;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .hero-section {
+        min-height: 85vh;
+
+        padding: 50px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .hero-date {
+        font-size: 18px;
+    }
+
+    .content-section {
+        padding: 70px 15px;
+    }
+
+    .content-section h2 {
+        font-size: 30px;
+    }
+
+    .event-card {
+        padding: 35px 20px;
+    }
+
+    .event-card h3 {
+        font-size: 28px;
+    }
+}
