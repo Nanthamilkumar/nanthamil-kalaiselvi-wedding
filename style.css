@@ -1,9 +1,24 @@
 /* =========================================
+   WEDDING WEBSITE
+   Nanthamil & Kalaiselvi
+   ========================================= */
+
+
+/* =========================================
+   GOOGLE FONTS
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap');
+
+
+/* =========================================
    GLOBAL
    ========================================= */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -11,45 +26,57 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
 
     background:
-        linear-gradient(
-            135deg,
-            #f7efe3,
-            #eee1cf
+        radial-gradient(
+            circle at top,
+            #fffaf3 0%,
+            #f6ecdc 45%,
+            #eee1ce 100%
         );
 
-    color: #42251d;
+    color: #4a2118;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-}
-
-
-/* =========================================
-   HOME PAGE
-   ========================================= */
-
-.home-page {
+main {
     width: 100%;
-    overflow: hidden;
 }
 
 
 /* =========================================
-   HERO / COUNTDOWN
+   COMMON
    ========================================= */
 
-.hero-section {
-    min-height: 100vh;
+section {
+    width: 100%;
+}
+
+.section-label {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #a13f2e;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 600;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+
+    min-height: 58vh;
 
     display: flex;
     flex-direction: column;
@@ -59,57 +86,108 @@ a {
 
     text-align: center;
 
-    padding: 50px 20px;
+    padding: 60px 20px 40px;
 
     position: relative;
+
+    border-bottom: 1px solid rgba(161, 63, 46, 0.15);
 }
 
-.hero-decoration {
-    font-size: 25px;
+.decorative-symbol {
 
-    margin-bottom: 15px;
+    font-size: 30px;
 
-    color: #a94a35;
+    color: #b87919;
+
+    margin-bottom: 12px;
+
+    animation: gentleFloat 3s ease-in-out infinite;
 }
 
-.eyebrow {
-    margin: 0 0 15px;
+@keyframes gentleFloat {
 
-    font-size: 14px;
+    0%,
+    100% {
+        transform: translateY(0);
+    }
 
-    letter-spacing: 4px;
-
-    color: #8f4634;
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
-.hero-section h1 {
-    margin: 0;
 
-    font-size: clamp(42px, 6vw, 76px);
+.hero-label {
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
+
+    color: #9e3e2d;
+
+    margin-bottom: 12px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(48px, 7vw, 90px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    color: #4a2118;
+
+    margin-bottom: 18px;
+}
+
+
+.hero h1 span {
+
+    color: #b52835;
+
+    font-size: 0.65em;
+
+    margin: 0 10px;
+}
+
+
+/* =========================================
+   TAMIL COUPLE NAMES
+   ========================================= */
+
+.tamil-names {
+
+    font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        sans-serif;
+
+    font-size: clamp(24px, 3.5vw, 42px);
 
     font-weight: 500;
 
-    letter-spacing: -2px;
+    color: #8f3026;
+
+    margin-bottom: 25px;
 }
 
-.hero-section h1 span {
-    color: #b43b32;
+.tamil-names span {
 
-    font-style: italic;
+    color: #b52835;
+
+    margin: 0 8px;
 }
 
-.family-text {
-    margin: 18px 0 25px;
 
-    font-size: 16px;
-}
+.hero-date {
 
-.wedding-date {
-    margin: 0 0 18px;
+    font-size: 22px;
 
-    font-size: 20px;
+    letter-spacing: 2px;
 
-    color: #8f4634;
+    color: #6c3a2e;
 }
 
 
@@ -117,324 +195,165 @@ a {
    COUNTDOWN
    ========================================= */
 
+.countdown-section {
+
+    text-align: center;
+
+    padding: 65px 20px 75px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 250, 243, 0.4),
+            rgba(255, 248, 239, 0.85)
+        );
+}
+
+.countdown-section h2 {
+
+    margin-bottom: 8px;
+
+    color: #4a2118;
+}
+
+.countdown-date {
+
+    font-size: 20px;
+
+    color: #9d3e2d;
+
+    margin-bottom: 28px;
+}
+
+
 .countdown {
+
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 14px;
 
-    margin-top: 5px;
+    flex-wrap: wrap;
 }
 
+
 .countdown-box {
-    width: 90px;
-    height: 90px;
+
+    width: 115px;
+
+    height: 105px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
-    background: rgba(255, 252, 247, 0.9);
+    background:
+        rgba(255, 255, 255, 0.82);
 
-    border: 1px solid #e1c9b8;
+    border:
 
-    border-radius: 15px;
+        1px solid
+        rgba(164, 71, 48, 0.25);
+
+    border-radius: 18px;
 
     box-shadow:
-        0 10px 25px rgba(100, 55, 35, 0.08);
+
+        0 12px 30px
+        rgba(95, 48, 28, 0.10);
 }
+
 
 .countdown-box span {
-    font-size: 30px;
 
-    color: #9e382d;
+    font-size: 42px;
+
+    line-height: 1;
+
+    color: #a23d2b;
+
+    font-weight: 600;
 }
+
 
 .countdown-box small {
-    margin-top: 5px;
 
-    font-size: 10px;
+    margin-top: 8px;
 
-    letter-spacing: 1px;
+    font-size: 11px;
 
-    color: #76564b;
+    letter-spacing: 2px;
+
+    color: #6f5147;
 }
 
 
 /* =========================================
-   SECTION HEADING
-   ========================================= */
-
-.section-heading {
-    text-align: center;
-
-    margin-bottom: 35px;
-}
-
-.section-heading p,
-.section-label {
-    margin: 0 0 8px;
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    color: #a14b38;
-}
-
-.section-heading h2 {
-    margin: 0;
-
-    font-size: 34px;
-
-    font-weight: 500;
-}
-
-
-/* =========================================
-   INVITATION SECTION
+   INVITATION
    ========================================= */
 
 .invitation-section {
-    padding: 90px 5%;
-}
 
-.invitation-grid {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 28px;
-}
-
-
-/* =========================================
-   INVITATION CARDS
-   ========================================= */
-
-.invitation-card {
-    min-height: 550px;
-
-    padding: 55px 40px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    border-radius: 25px;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-/* English */
-
-.english-card {
-    background:
-        linear-gradient(
-            145deg,
-            #fffaf5,
-            #f8eee5
-        );
-
-    border: 1px solid #e2cfc2;
-
-    box-shadow:
-        0 15px 40px rgba(80, 40, 20, 0.08);
-}
-
-
-/* Tamil */
-
-.tamil-card {
-    background:
-        linear-gradient(
-            145deg,
-            #fff7e9,
-            #f9ead1
-        );
-
-    border: 2px solid #c99b3b;
-
-    box-shadow:
-        0 15px 40px rgba(120, 80, 20, 0.10);
-}
-
-
-/* =========================================
-   CARD CONTENT
-   ========================================= */
-
-.card-flower {
-    font-size: 42px;
-
-    margin-bottom: 25px;
-}
-
-.card-label {
-    margin: 0 0 25px;
-
-    font-size: 15px;
-
-    letter-spacing: 3px;
-
-    color: #805344;
-}
-
-.invitation-card h3 {
-    margin: 8px 0;
-
-    font-size: clamp(38px, 4vw, 55px);
-
-    font-weight: 500;
-}
-
-.card-heart {
-    font-size: 28px;
-
-    margin: 12px 0;
-}
-
-.card-date {
-    margin: 25px 0;
-
-    font-size: 18px;
-
-    color: #8d4937;
-}
-
-
-/* =========================================
-   BUTTONS
-   ========================================= */
-
-.invitation-button,
-.map-button {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 14px 28px;
-
-    border-radius: 30px;
-
-    background: #9e3d2d;
-
-    color: white;
-
-    font-size: 15px;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.invitation-button:hover,
-.map-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(100, 35, 20, 0.2);
-}
-
-.tamil-card .invitation-button {
-    background: #a52c25;
-}
-
-
-/* =========================================
-   INVITATION MESSAGE
-   ========================================= */
-
-.message-section {
     max-width: 1000px;
 
-    margin: 40px auto 100px;
+    margin: 0 auto;
 
-    padding: 80px 60px;
+    padding: 85px 25px;
 
     text-align: center;
-
-    border-radius: 25px;
 }
 
-.english-message {
-    background: #fffaf5;
 
-    border: 1px solid #e0cfc4;
+.invitation-section h2 {
+
+    margin-bottom: 18px;
 }
 
-.tamil-message {
-    background: #fff4df;
 
-    border: 2px solid #d2a448;
+.invitation-section > p:not(.section-label) {
+
+    max-width: 760px;
+
+    margin: 0 auto 20px;
+
+    font-size: 20px;
+
+    color: #63463c;
 }
 
-.message-section h2 {
-    margin: 10px 0 25px;
 
-    font-size: 40px;
+.invitation-names {
 
-    font-weight: 500;
+    font-size: 30px;
+
+    font-weight: 600;
+
+    margin: 20px 0 8px;
+
+    color: #4a2118;
 }
 
-.message {
-    max-width: 720px;
 
-    margin: auto;
+.invitation-names span {
+
+    color: #b52835;
+
+    margin: 0 7px;
+}
+
+
+.invitation-date {
 
     font-size: 18px;
 
-    line-height: 1.9;
-}
-
-.message-names {
-    margin-top: 30px;
-
-    font-size: 25px;
-}
-
-.message-names span {
-    color: #c72e45;
-
-    margin: 0 8px;
-}
-
-.message-date {
-    margin-top: 15px;
-
-    color: #98513d;
-}
-
-
-/* =========================================
-   TAMIL TEXT
-   ========================================= */
-
-.tamil-text {
-    font-family:
-        "Noto Serif Tamil",
-        "Latha",
-        "Nirmala UI",
-        serif;
+    color: #8c4939;
 }
 
 
@@ -443,102 +362,412 @@ a {
    ========================================= */
 
 .events-section {
-    padding: 80px 5% 100px;
+
+    padding: 75px 5% 90px;
+
+    background:
+        rgba(255, 250, 243, 0.55);
 }
 
-.timeline {
-    max-width: 1100px;
 
-    margin: auto;
+.events-section > .section-label,
+.events-section > h2 {
+
+    max-width: 1500px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.events-section > h2 {
+
+    margin-bottom: 30px;
+}
+
+
+.events-container {
+
+    max-width: 1500px;
+
+    margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-    gap: 30px;
+    gap: 28px;
 }
+
+
+/* =========================================
+   EVENT CARD
+   ========================================= */
 
 .event-card {
-    background: rgba(255, 252, 247, 0.95);
 
-    border: 1px solid #dfcbbd;
+    position: relative;
 
-    border-radius: 25px;
+    background:
+        rgba(255, 255, 255, 0.80);
 
-    padding: 45px;
+    border:
 
-    display: flex;
+        1px solid
+        rgba(159, 69, 48, 0.22);
 
-    gap: 25px;
+    border-radius: 24px;
+
+    padding: 38px;
 
     box-shadow:
-        0 15px 35px rgba(80, 40, 20, 0.07);
+
+        0 18px 45px
+        rgba(92, 45, 28, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    overflow: hidden;
 }
 
-.wedding-event {
-    border: 2px solid #c89d43;
+
+.event-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a33d2c,
+            #d49a36,
+            #a33d2c
+        );
 }
+
+
+.event-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+
+        0 25px 55px
+        rgba(92, 45, 28, 0.15);
+}
+
 
 .event-icon {
+
     font-size: 45px;
 
-    min-width: 60px;
+    margin-bottom: 12px;
 }
 
+
 .event-type {
-    margin: 0 0 8px;
 
     font-size: 13px;
 
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 
-    color: #9c4a37;
+    color: #a13f2e;
+
+    margin-bottom: 4px;
 }
 
-.event-content h3 {
-    margin: 0;
 
-    font-size: 30px;
+.event-card h3 {
 
-    font-weight: 500;
+    font-size: 32px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: #4a2118;
 }
+
 
 .event-date {
-    margin: 15px 0;
 
-    font-size: 18px;
+    font-size: 21px;
 
-    color: #a34a37;
+    color: #a13f2e;
+
+    font-weight: 500;
+
+    margin-bottom: 2px;
 }
 
-.event-divider {
-    margin: 15px 0;
 
-    color: #b78929;
-}
+.event-time {
 
-.event-content h4 {
-    margin: 0 0 8px;
+    font-size: 19px;
 
-    font-size: 18px;
-}
+    font-weight: 600;
 
-.venue-name {
-    margin: 0;
-
-    font-size: 17px;
-}
-
-.venue-address {
-    line-height: 1.7;
-
-    font-size: 16px;
+    color: #6c3b30;
 
     margin-bottom: 20px;
 }
 
+
+.event-divider {
+
+    height: 1px;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(161, 63, 46, 0.25),
+            transparent
+        );
+
+    margin: 18px 0 22px;
+}
+
+
+.event-card h4 {
+
+    font-size: 18px;
+
+    color: #8d3b2d;
+
+    margin-bottom: 5px;
+}
+
+
+.venue-name {
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    color: #4a2118;
+
+    margin-bottom: 8px;
+}
+
+
+.venue-address {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #60463d;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   MAP BUTTON
+   ========================================= */
+
 .map-button {
-    margin-top: 5px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 13px 22px;
+
+    min-height: 48px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a84230,
+            #8e2f23
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(142, 47, 35, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.map-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+
+        0 12px 25px
+        rgba(142, 47, 35, 0.30);
+}
+
+
+/* =========================================
+   TIMELINE
+   ========================================= */
+
+.timeline-section {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 90px 25px 100px;
+
+    text-align: center;
+}
+
+
+.timeline-section h2 {
+
+    margin-bottom: 55px;
+}
+
+
+.timeline {
+
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+
+.timeline-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.timeline-dot {
+
+    flex-shrink: 0;
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #fffaf3;
+
+    border:
+
+        2px solid
+        #c58b32;
+
+    font-size: 28px;
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(90, 47, 27, 0.12);
+}
+
+
+.timeline-content {
+
+    padding-top: 5px;
+
+    padding-bottom: 30px;
+}
+
+
+.timeline-content span {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #a13f2e;
+
+    font-weight: 600;
+}
+
+
+.timeline-content h3 {
+
+    font-size: 28px;
+
+    margin: 5px 0;
+
+    color: #4a2118;
+}
+
+
+.timeline-content p {
+
+    font-size: 18px;
+
+    color: #6c473c;
+}
+
+
+.timeline-line {
+
+    position: absolute;
+
+    left: 34px;
+
+    top: 70px;
+
+    bottom: 70px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c58b32,
+            #d9b87b,
+            #c58b32
+        );
 }
 
 
@@ -546,26 +775,46 @@ a {
    FOOTER
    ========================================= */
 
-.footer {
-    padding: 60px 20px;
+footer {
 
     text-align: center;
 
-    background: #44261e;
+    padding: 60px 20px;
 
-    color: #f8eadb;
+    background:
+        #4a2118;
+
+    color: #f9ecda;
 }
 
-.footer p {
-    margin: 7px;
+
+.footer-heart {
+
+    font-size: 28px;
+
+    color: #e75b68;
+
+    margin-bottom: 8px;
 }
 
-.footer h2 {
-    margin: 10px 0;
+
+footer p {
+
+    font-size: 17px;
+
+    opacity: 0.9;
+
+    margin-bottom: 4px;
+}
+
+
+footer h3 {
 
     font-size: 30px;
 
-    font-weight: 400;
+    font-weight: 500;
+
+    margin-bottom: 5px;
 }
 
 
@@ -573,90 +822,229 @@ a {
    MOBILE
    ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
-    .hero-section {
-        min-height: 100svh;
+    .hero {
 
-        padding: 35px 15px;
+        min-height: auto;
+
+        padding:
+            75px
+            20px
+            55px;
     }
 
-    .hero-section h1 {
-        font-size: 43px;
+
+    .hero h1 {
+
+        font-size: clamp(42px, 10vw, 65px);
+    }
+
+
+    .events-container {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .event-card {
+
+        padding: 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        padding-top: 55px;
+    }
+
+
+    .hero-label {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 42px;
 
         line-height: 1.15;
     }
 
-    .countdown {
-        gap: 7px;
+
+    .tamil-names {
+
+        font-size: 24px;
+
+        line-height: 1.7;
     }
+
+
+    .hero-date {
+
+        font-size: 18px;
+    }
+
+
+    .countdown-section {
+
+        padding:
+            50px
+            15px
+            60px;
+    }
+
+
+    .countdown {
+
+        gap: 8px;
+    }
+
 
     .countdown-box {
-        width: 72px;
-        height: 72px;
+
+        width: calc(50% - 8px);
+
+        height: 95px;
     }
+
 
     .countdown-box span {
-        font-size: 23px;
-    }
 
-    .countdown-box small {
-        font-size: 8px;
+        font-size: 34px;
     }
 
 
     .invitation-section {
-        padding: 65px 15px;
-    }
 
-    .invitation-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .invitation-card {
-        min-height: 500px;
-
-        padding: 40px 20px;
+        padding:
+            65px
+            20px;
     }
 
 
-    .message-section {
-        margin: 25px 15px 70px;
+    .invitation-section h2 {
 
-        padding: 55px 22px;
+        font-size: 34px;
     }
 
-    .message-section h2 {
-        font-size: 31px;
+
+    .invitation-section > p:not(.section-label) {
+
+        font-size: 18px;
     }
 
-    .message {
-        font-size: 16px;
+
+    .invitation-names {
+
+        font-size: 25px;
     }
 
 
     .events-section {
-        padding: 60px 15px;
+
+        padding:
+            60px
+            18px
+            70px;
     }
 
-    .timeline {
-        grid-template-columns: 1fr;
-    }
 
     .event-card {
-        padding: 30px 25px;
 
-        flex-direction: column;
+        padding: 28px 22px;
+
+        border-radius: 20px;
     }
 
-    .event-icon {
-        min-width: auto;
+
+    .event-card h3 {
+
+        font-size: 28px;
     }
 
-    .event-content h3 {
-        font-size: 27px;
+
+    .venue-name {
+
+        font-size: 21px;
     }
 
+
+    .venue-address {
+
+        font-size: 16px;
+    }
+
+
+    .map-button {
+
+        width: 100%;
+    }
+
+
+    .timeline-section {
+
+        padding:
+            70px
+            20px
+            80px;
+    }
+
+
+    .timeline-section h2 {
+
+        margin-bottom: 40px;
+    }
+
+
+    .timeline-item {
+
+        gap: 16px;
+    }
+
+
+    .timeline-dot {
+
+        width: 55px;
+
+        height: 55px;
+
+        font-size: 22px;
+    }
+
+
+    .timeline-line {
+
+        left: 26px;
+
+        top: 55px;
+    }
+
+
+    .timeline-content h3 {
+
+        font-size: 23px;
+    }
+
+
+    .timeline-content span {
+
+        font-size: 11px;
+
+        letter-spacing: 1px;
+    }
+
+
+    footer h3 {
+
+        font-size: 26px;
+    }
 }
 
 
@@ -664,27 +1052,22 @@ a {
    SMALL PHONES
    ========================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 380px) {
 
-    .hero-section h1 {
-        font-size: 37px;
-    }
+    .hero h1 {
 
-    .countdown-box {
-        width: 67px;
-        height: 67px;
-    }
-
-    .countdown-box span {
-        font-size: 21px;
-    }
-
-    .countdown-box small {
-        font-size: 7px;
-    }
-
-    .invitation-card h3 {
         font-size: 36px;
     }
 
+
+    .tamil-names {
+
+        font-size: 21px;
+    }
+
+
+    .countdown-box {
+
+        width: 100px;
+    }
 }
