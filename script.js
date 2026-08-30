@@ -1,52 +1,71 @@
-// =====================================================
+// ==========================================
 // WEDDING COUNTDOWN
-// =====================================================
+// ==========================================
 
-const weddingDate = new Date(
-    "September 17, 2026 07:00:00"
-).getTime();
+const weddingDate = new Date("September 17, 2026 07:00:00").getTime();
 
+const countdownContent = document.querySelector(".countdown-content");
 
 function updateCountdown() {
 
     const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-    const difference = weddingDate - now;
+    // ==========================================
+    // WEDDING DAY HAS ARRIVED
+    // ==========================================
 
+    if (distance <= 0) {
 
-    if (difference <= 0) {
+        clearInterval(countdownTimer);
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        countdownContent.innerHTML = `
+            <div class="section-label">
+                ✦ OUR SPECIAL DAY ✦
+            </div>
+
+            <h2 class="wedding-day-title">
+                The Day Has Arrived
+            </h2>
+
+            <p class="wedding-day-message">
+                Today we begin our forever together ♥
+            </p>
+
+            <div class="wedding-day-heart">
+                ♥
+            </div>
+        `;
 
         return;
     }
 
+    // ==========================================
+    // CALCULATE TIME
+    // ==========================================
 
     const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
+        distance / (1000 * 60 * 60 * 24)
     );
-
 
     const hours = Math.floor(
-        (difference % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
     );
-
 
     const minutes = Math.floor(
-        (difference % (1000 * 60 * 60))
-        / (1000 * 60)
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
     );
-
 
     const seconds = Math.floor(
-        (difference % (1000 * 60))
-        / 1000
+        (distance % (1000 * 60)) /
+        1000
     );
 
+    // ==========================================
+    // UPDATE HTML
+    // ==========================================
 
     document.getElementById("days").textContent =
         String(days).padStart(2, "0");
@@ -62,101 +81,8 @@ function updateCountdown() {
 }
 
 
+// Run immediately
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
-
-
-// =====================================================
-// SCROLL REVEAL ANIMATION
-// =====================================================
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-    new IntersectionObserver(
-
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("active");
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
-
-
-// =====================================================
-// HERO SCROLL BUTTON
-// =====================================================
-
-const heroScroll =
-    document.querySelector(".hero-section .scroll-hint");
-
-
-if (heroScroll) {
-
-    heroScroll.addEventListener("click", () => {
-
-        const nextSection =
-            document.querySelector(".countdown-section");
-
-        if (nextSection) {
-
-            nextSection.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-}
-
-
-// =====================================================
-// COUNTDOWN SECTION SCROLL
-// =====================================================
-
-const sectionScroll =
-    document.querySelector(".section-scroll");
-
-
-if (sectionScroll) {
-
-    sectionScroll.addEventListener("click", () => {
-
-        const invitation =
-            document.querySelector(".invitation-section");
-
-        if (invitation) {
-
-            invitation.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-}
+// Update every second
+const countdownTimer = setInterval(updateCountdown, 1000);
