@@ -1694,3 +1694,63 @@ section {
 
     color: var(--white);
 }
+
+/* =========================================================
+   MOBILE — CENTER INVITATION CONTENT
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .invitation-section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .invitation-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .invitation-card .post-header {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .invitation-card .section-label,
+    .invitation-card h2,
+    .invitation-card p,
+    .invitation-card .invitation-names,
+    .invitation-card .invitation-date {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .invitation-card .section-label {
+        display: block;
+    }
+
+    .invitation-card h2 {
+        text-align: center;
+    }
+
+    .invitation-card p {
+        text-align: center;
+    }
+
+    .invitation-names {
+        text-align: center;
+    }
+
+    .invitation-date {
+        text-align: center;
+    }
+}
