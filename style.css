@@ -1825,3 +1825,325 @@ h3 {
         letter-spacing: 0.22em;
     }
 }
+/* =========================================================
+   INSTAGRAM STYLE POST HEADER
+   ========================================================= */
+
+.post-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 18px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid rgba(61, 33, 29, 0.10);
+}
+
+
+.post-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Profile circle */
+
+.profile-circle {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4c7a1,
+            #c95b52,
+            #8e3027
+        );
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    border: 2px solid #ffffff;
+
+    box-shadow:
+        0 0 0 1px rgba(169, 64, 50, 0.25);
+}
+
+
+/* Username + subtitle */
+
+.profile-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 3px;
+
+    text-align: left;
+}
+
+
+.profile-info strong {
+
+    font-family: var(--sans);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--brown);
+
+    letter-spacing: -0.01em;
+}
+
+
+.profile-info span {
+
+    font-size: 10px;
+
+    color: var(--brown-soft);
+
+    letter-spacing: 0.03em;
+}
+
+
+/* Three-dot menu */
+
+.post-menu {
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    color: var(--brown);
+
+    letter-spacing: 2px;
+
+    cursor: default;
+
+    padding: 5px 2px;
+}
+
+
+/* =========================================================
+   INSTAGRAM POST FEEL
+   ========================================================= */
+
+.hero-section,
+.countdown-section,
+.invitation-section,
+.events-section,
+.timeline-section,
+.footer {
+
+    width: min(100%, 900px);
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/* Subtle separation between posts */
+
+.hero-section::after,
+.countdown-section::after,
+.invitation-section::after,
+.events-section::after,
+.timeline-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 8%;
+
+    right: 8%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(169, 64, 50, 0.18),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   COUNTDOWN POST
+   ========================================================= */
+
+.countdown-content {
+
+    width: 100%;
+
+    padding:
+        35px
+        25px
+        20px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   EVENT POST
+   ========================================================= */
+
+.events-section {
+
+    padding:
+        70px
+        25px;
+}
+
+
+.events-header {
+
+    width: 100%;
+
+    margin-bottom: 25px;
+}
+
+
+.event-card {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 12px;
+
+    padding:
+        35px
+        25px;
+
+    border-radius: 22px;
+}
+
+
+/* =========================================================
+   FOOTER POST
+   ========================================================= */
+
+.footer-content {
+
+    width: 100%;
+
+    padding: 30px 25px;
+
+    text-align: center;
+}
+
+
+.footer-content .post-header {
+
+    margin-bottom: 45px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .post-header {
+
+        padding:
+            14px
+            12px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .profile-circle {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+
+    .profile-info strong {
+
+        font-size: 12px;
+    }
+
+
+    .profile-info span {
+
+        font-size: 9px;
+    }
+
+
+    .post-menu {
+
+        font-size: 22px;
+    }
+
+
+    .countdown-content {
+
+        padding:
+            25px
+            10px;
+    }
+
+
+    .events-section {
+
+        padding:
+            60px
+            15px;
+    }
+
+
+    .event-card {
+
+        padding:
+            30px
+            18px;
+    }
+
+
+    .footer-content {
+
+        padding:
+            25px
+            15px;
+    }
+
+}
