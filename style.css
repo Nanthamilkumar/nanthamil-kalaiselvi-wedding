@@ -1754,3 +1754,349 @@ section {
         text-align: center;
     }
 }
+/* =========================================================
+   INVITATION SECTION — FORCE PERFECT CENTER ALIGNMENT
+   ========================================================= */
+
+.invitation-section {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding: 80px 24px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(184, 77, 64, 0.035) 0%,
+            rgba(184, 77, 64, 0.012) 35%,
+            transparent 70%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   INVITATION CARD
+   --------------------------------------------------------- */
+
+.invitation-card {
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    padding: 90px 80px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: rgba(255, 252, 247, 0.88);
+
+    border: 1px solid rgba(143, 64, 53, 0.16);
+
+    box-shadow:
+        0 25px 70px rgba(74, 48, 42, 0.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   INVITATION LABEL
+   --------------------------------------------------------- */
+
+.invitation-card .section-label {
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    text-align: center;
+
+    color: #a94f43;
+
+    font-family:
+        "Montserrat",
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.32em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN TITLE
+   --------------------------------------------------------- */
+
+.invitation-card h2 {
+    width: 100%;
+
+    margin: 0 auto 30px;
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        "Bodoni 72",
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.025em;
+
+    color: #68443c;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.invitation-card > p {
+    width: min(700px, 100%);
+
+    margin: 0 auto 42px;
+
+    text-align: center;
+
+    font-family:
+        "Montserrat",
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    color: #806b64;
+}
+
+
+/* ---------------------------------------------------------
+   COUPLE NAMES
+   --------------------------------------------------------- */
+
+.invitation-names {
+    width: 100%;
+
+    margin: 0 auto 20px;
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        "Bodoni 72",
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(27px, 3vw, 38px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #68443c;
+}
+
+.invitation-names span {
+    display: inline-block;
+
+    margin: 0 10px;
+
+    color: #b84d40;
+
+    font-size: 0.85em;
+}
+
+
+/* ---------------------------------------------------------
+   DATE
+   --------------------------------------------------------- */
+
+.invitation-date {
+    width: 100%;
+
+    text-align: center;
+
+    font-family:
+        "Montserrat",
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: #b08369;
+}
+
+
+/* =========================================================
+   IMPORTANT — POST HEADER SHOULD STAY AT TOP
+   ========================================================= */
+
+/*
+   The Instagram-style header should NOT affect the
+   centering of the invitation content.
+*/
+
+.invitation-card .post-header {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 70px;
+
+    text-align: left;
+}
+
+.invitation-card .post-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.invitation-card .post-menu {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .invitation-section {
+        min-height: 100svh;
+
+        padding: 40px 16px;
+    }
+
+    .invitation-card {
+        width: 100%;
+
+        padding: 65px 24px;
+
+        margin: 0 auto;
+    }
+
+    .invitation-card .post-header {
+        margin-bottom: 50px;
+    }
+
+    .invitation-card h2 {
+        width: 100%;
+
+        font-size: clamp(42px, 12vw, 58px);
+
+        line-height: 0.98;
+
+        margin-bottom: 26px;
+    }
+
+    .invitation-card > p {
+        width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        margin-bottom: 34px;
+    }
+
+    .invitation-names {
+        font-size: clamp(25px, 7vw, 32px);
+
+        line-height: 1.35;
+    }
+
+    .invitation-names span {
+        margin: 0 5px;
+    }
+
+    .invitation-date {
+        font-size: 9px;
+
+        letter-spacing: 0.14em;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .invitation-section {
+        padding: 25px 12px;
+    }
+
+    .invitation-card {
+        padding: 50px 18px;
+    }
+
+    .invitation-card .post-header {
+        margin-bottom: 42px;
+    }
+
+    .invitation-card .section-label {
+        font-size: 9px;
+
+        letter-spacing: 0.25em;
+
+        margin-bottom: 22px;
+    }
+
+    .invitation-card h2 {
+        font-size: 44px;
+
+        line-height: 0.98;
+    }
+
+    .invitation-card > p {
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+    .invitation-names {
+        font-size: 25px;
+    }
+}
