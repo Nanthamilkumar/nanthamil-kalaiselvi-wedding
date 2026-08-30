@@ -1,10 +1,8 @@
 /* =========================================
-   GLOBAL RESET
+   GLOBAL
    ========================================= */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,448 +11,17 @@ html {
 }
 
 body {
-    min-height: 100vh;
-    background: #eee5d8;
-    color: #3b2119;
-}
-
-
-/* =========================================
-   MAIN LANGUAGE CONTAINER
-   ========================================= */
-
-.language-container {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: stretch;
-
-    gap: 24px;
-
-    padding: 24px;
-}
-
-
-/* =========================================
-   COMMON INVITATION CARD
-   ========================================= */
-
-.invitation {
-    position: relative;
-
-    flex: 1;
-
-    min-height: calc(100vh - 48px);
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    padding: 70px 40px;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.invitation:hover {
-    transform: translateY(-5px);
-}
-
-
-/* =========================================
-   ENGLISH INVITATION
-   MODERN / ELEGANT
-   ========================================= */
-
-.english-invitation {
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf9,
-            #f8eee3
-        );
-
-    color: #402018;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 15px 40px rgba(70, 40, 20, 0.10);
-}
-
-
-/* English decorative border */
-
-.english-invitation::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 18px;
-
-    border: 1px solid rgba(139, 58, 43, 0.25);
-
-    border-radius: 20px;
-
-    pointer-events: none;
-}
-
-
-/* English top decoration */
-
-.english-invitation::after {
-    content: "✦";
-
-    position: absolute;
-
-    top: 35px;
-
-    font-size: 20px;
-
-    color: #a25a45;
-}
-
-
-/* =========================================
-   TAMIL INVITATION
-   TRADITIONAL
-   ========================================= */
-
-.tamil-invitation {
-    background:
-        radial-gradient(
-            circle at top,
-            #fff8ed,
-            #f9e8d0
-        );
-
-    color: #7b241c;
-
-    font-family:
-        "Noto Serif Tamil",
-        "Latha",
-        "Nirmala UI",
-        serif;
-
-    border-radius: 28px;
-
-    border: 3px double #b8860b;
-
-    box-shadow:
-        0 15px 40px rgba(100, 50, 10, 0.12);
-}
-
-
-/* Tamil inner border */
-
-.tamil-invitation::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 12px;
-
-    border: 1px solid #c59b43;
-
-    border-radius: 20px;
-
-    pointer-events: none;
-}
-
-
-/* Tamil decorative top */
-
-.tamil-invitation::after {
-    content: "❈";
-
-    position: absolute;
-
-    top: 30px;
-
-    font-size: 24px;
-
-    color: #b8860b;
-}
-
-
-/* =========================================
-   FLOWER / SYMBOL
-   ========================================= */
-
-.symbol {
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 48px;
-
-    margin-bottom: 28px;
-
-    animation: floatFlower 3s ease-in-out infinite;
-}
-
-@keyframes floatFlower {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-
-/* =========================================
-   SUBTITLE
-   ========================================= */
-
-.subtitle {
-    position: relative;
-
-    z-index: 2;
-
-    margin-bottom: 28px;
-
-    letter-spacing: 2px;
-}
-
-
-/* English subtitle */
-
-.english-invitation .subtitle {
-    font-size: 21px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 4px;
-
-    color: #795044;
-}
-
-
-/* Tamil subtitle */
-
-.tamil-invitation .subtitle {
-    font-size: 25px;
-
-    letter-spacing: 1px;
-
-    color: #8b281e;
-}
-
-
-/* =========================================
-   COUPLE NAMES
-   ========================================= */
-
-.couple {
-    position: relative;
-
-    z-index: 2;
-
-    line-height: 1.4;
-}
-
-
-/* English names */
-
-.english-invitation .couple {
-    font-size: clamp(38px, 4vw, 58px);
-
-    font-weight: normal;
-}
-
-
-/* Tamil names */
-
-.tamil-invitation .couple {
-    font-size: clamp(32px, 3.5vw, 50px);
-
-    font-weight: normal;
-}
-
-
-/* =========================================
-   HEART
-   ========================================= */
-
-.heart {
-    margin: 14px 0;
-
-    font-size: 30px;
-
-    animation: heartbeat 2s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.12);
-    }
-}
-
-
-/* =========================================
-   DATE
-   ========================================= */
-
-.date {
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 32px;
-
-    margin-bottom: 34px;
-}
-
-.english-invitation .date {
-    font-size: 19px;
-
-    letter-spacing: 1px;
-
-    color: #684238;
-}
-
-.tamil-invitation .date {
-    font-size: 20px;
-
-    color: #7b241c;
-}
-
-
-/* =========================================
-   BUTTON
-   ========================================= */
-
-.button {
-    position: relative;
-
-    z-index: 2;
-
-    display: inline-block;
-
-    padding: 15px 34px;
-
-    border-radius: 50px;
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* English button */
-
-.english-invitation .button {
-    background: #8b3a2b;
-
-    color: #ffffff;
-
-    box-shadow:
-        0 8px 20px rgba(139, 58, 43, 0.25);
-}
-
-
-/* Tamil button */
-
-.tamil-invitation .button {
-    background: #9b1c1c;
-
-    color: #fff8e7;
-
-    box-shadow:
-        0 8px 20px rgba(155, 28, 28, 0.25);
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 700px) {
-
-    .language-container {
-        flex-direction: column;
-
-        gap: 16px;
-
-        padding: 12px;
-    }
-
-    .invitation {
-        min-height: 90vh;
-
-        padding: 65px 25px;
-    }
-
-    .english-invitation::before,
-    .tamil-invitation::before {
-        inset: 10px;
-    }
-
-    .english-invitation .couple {
-        font-size: 38px;
-    }
-
-    .tamil-invitation .couple {
-        font-size: 32px;
-    }
-
-    .english-invitation .subtitle {
-        font-size: 17px;
-
-        letter-spacing: 3px;
-    }
-
-    .tamil-invitation .subtitle {
-        font-size: 22px;
-    }
-
-    .button {
-        padding: 14px 28px;
-    }
-}
-
-/* =========================================
-   INVITATION PAGES
-   ========================================= */
-
-.invitation-page {
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
     background:
         linear-gradient(
-            180deg,
-            #fffaf3,
-            #f5e8d8
+            135deg,
+            #f7efe3,
+            #eee1cf
         );
 
-    color: #402018;
+    color: #42251d;
 
     font-family:
         Georgia,
@@ -462,16 +29,23 @@ body {
         serif;
 }
 
-
-/* Main page content */
-
-.invitation-page main {
-    width: 100%;
+a {
+    text-decoration: none;
 }
 
 
 /* =========================================
-   HERO
+   HOME PAGE
+   ========================================= */
+
+.home-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO / COUNTDOWN
    ========================================= */
 
 .hero-section {
@@ -480,541 +54,62 @@ body {
     display: flex;
     flex-direction: column;
 
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 
-    padding: 60px 25px;
+    padding: 50px 20px;
+
+    position: relative;
 }
 
+.hero-decoration {
+    font-size: 25px;
 
-.hero-section .symbol {
-    font-size: 55px;
+    margin-bottom: 15px;
 
-    margin-bottom: 25px;
+    color: #a94a35;
 }
 
+.eyebrow {
+    margin: 0 0 15px;
 
-.section-label {
     font-size: 14px;
 
     letter-spacing: 4px;
 
-    text-transform: uppercase;
-
-    color: #8b3a2b;
-
-    margin-bottom: 25px;
+    color: #8f4634;
 }
-
 
 .hero-section h1 {
-    font-size: clamp(42px, 8vw, 72px);
-
-    font-weight: normal;
-
-    line-height: 1.3;
-}
-
-
-.hero-heart {
-    font-size: 34px;
-
-    margin: 12px 0;
-}
-
-
-.hero-date {
-    margin-top: 35px;
-
-    font-size: 21px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================
-   CONTENT
-   ========================================= */
-
-.content-section {
-    width: min(900px, 90%);
-
-    margin: 0 auto;
-
-    padding: 90px 20px;
-
-    text-align: center;
-}
-
-
-.content-section h2 {
-    font-size: clamp(30px, 5vw, 46px);
-
-    font-weight: normal;
-
-    line-height: 1.4;
-
-    margin-bottom: 25px;
-}
-
-
-.content-section > p:not(.section-label) {
-    max-width: 650px;
-
-    margin: 0 auto;
-
-    font-size: 19px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   EVENT CARD
-   ========================================= */
-
-.event-card {
-    max-width: 600px;
-
-    margin: 35px auto;
-
-    padding: 45px 30px;
-
-    background: rgba(255, 255, 255, 0.65);
-
-    border: 1px solid rgba(139, 58, 43, 0.20);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 30px rgba(60, 30, 15, 0.08);
-}
-
-
-.event-icon {
-    font-size: 42px;
-
-    margin-bottom: 15px;
-}
-
-
-.event-card h3 {
-    font-size: 32px;
-
-    font-weight: normal;
-
-    margin-bottom: 15px;
-}
-
-
-.event-card p {
-    font-size: 18px;
-
-    line-height: 1.8;
-}
-
-
-.event-card .event-date {
-    font-size: 21px;
-
-    color: #8b3a2b;
-
-    margin-bottom: 10px;
-}
-
-
-.event-button {
-    display: inline-block;
-
-    margin-top: 25px;
-
-    padding: 13px 25px;
-
-    background: #8b3a2b;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-}
-
-
-/* =========================================
-   BACK BUTTON
-   ========================================= */
-
-.back-section {
-    text-align: center;
-
-    padding: 50px 20px 80px;
-}
-
-
-.back-button {
-    color: #8b3a2b;
-
-    text-decoration: none;
-
-    font-size: 16px;
-}
-
-
-/* =========================================
-   TAMIL PAGE
-   ========================================= */
-
-.tamil-page {
-    background:
-        radial-gradient(
-            circle at top,
-            #fff8ed,
-            #f5dfc3
-        );
-
-    color: #7b241c;
-
-    font-family:
-        "Noto Serif Tamil",
-        "Nirmala UI",
-        "Latha",
-        serif;
-}
-
-
-.tamil-page .section-label {
-    color: #9b1c1c;
-
-    letter-spacing: 1px;
-
-    text-transform: none;
-
-    font-size: 19px;
-}
-
-
-.tamil-page .hero-section {
-    border-bottom: 3px double #b8860b;
-}
-
-
-.tamil-page .content-section {
-    border-bottom: 1px solid rgba(184, 134, 11, 0.3);
-}
-
-
-.tamil-page .event-card {
-    border: 3px double #b8860b;
-
-    background: rgba(255, 248, 235, 0.8);
-}
-
-
-.tamil-page .event-card .event-date {
-    color: #9b1c1c;
-}
-
-
-.tamil-page .event-button {
-    background: #9b1c1c;
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 700px) {
-
-    .hero-section {
-        min-height: 85vh;
-
-        padding: 50px 20px;
-    }
-
-    .hero-section h1 {
-        font-size: 42px;
-    }
-
-    .hero-date {
-        font-size: 18px;
-    }
-
-    .content-section {
-        padding: 70px 15px;
-    }
-
-    .content-section h2 {
-        font-size: 30px;
-    }
-
-    .event-card {
-        padding: 35px 20px;
-    }
-
-    .event-card h3 {
-        font-size: 28px;
-    }
-}
-
-/* =========================================
-   HOME PAGE COUNTDOWN
-   ========================================= */
-
-.countdown-section {
-    padding: 90px 20px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            180deg,
-            #f8eee3,
-            #eee1d2
-        );
-
-    color: #402018;
-}
-
-
-.countdown-label {
-    margin-bottom: 15px;
-
-    font-size: 14px;
-
-    letter-spacing: 4px;
-
-    color: #8b3a2b;
-}
-
-
-.countdown-section h2 {
-    margin-bottom: 15px;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: clamp(30px, 5vw, 48px);
-
-    font-weight: normal;
-}
-
-
-.countdown-date {
-    margin-bottom: 40px;
-
-    font-size: 19px;
-
-    letter-spacing: 1px;
-}
-
-
-/* Countdown boxes */
-
-.countdown {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-}
-
-
-.countdown-box {
-    min-width: 120px;
-
-    padding: 22px 15px;
-
-    background: rgba(255, 255, 255, 0.75);
-
-    border: 1px solid rgba(139, 58, 43, 0.25);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 8px 25px rgba(70, 40, 20, 0.08);
-}
-
-
-.countdown-box span {
-    display: block;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 42px;
-
-    line-height: 1;
-
-    color: #8b3a2b;
-}
-
-
-.countdown-box small {
-    display: block;
-
-    margin-top: 10px;
-
-    font-size: 13px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    color: #795044;
-}
-
-
-/* Mobile countdown */
-
-@media (max-width: 600px) {
-
-    .countdown {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        max-width: 360px;
-
-        gap: 12px;
-    }
-
-
-    .countdown-box {
-        min-width: 0;
-
-        padding: 20px 10px;
-    }
-
-
-    .countdown-box span {
-        font-size: 34px;
-    }
-
-}
-/* =========================================
-   HOME PAGE — FIT EVERYTHING IN ONE SCREEN
-   ========================================= */
-
-html,
-body {
     margin: 0;
-    padding: 0;
+
+    font-size: clamp(42px, 6vw, 76px);
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
 }
 
+.hero-section h1 span {
+    color: #b43b32;
 
-/* Main home page */
-
-body {
-    min-height: 100vh;
-    min-height: 100dvh;
+    font-style: italic;
 }
 
-
-/* Language cards */
-
-.language-container {
-    min-height: 58vh;
-    min-height: 58dvh;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
-
-    padding: 18px 14px 10px;
-
-    box-sizing: border-box;
-}
-
-
-/* Make the two cards compact */
-
-.language-container .invitation {
-    min-height: 0;
-
-    height: 100%;
-
-    box-sizing: border-box;
-
-    padding: 28px 20px;
-
-    border-radius: 22px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-
-/* Flowers / symbols */
-
-.language-container .symbol {
-    margin-bottom: 12px;
-
-    font-size: 32px;
-}
-
-
-/* Invitation title */
-
-.language-container .subtitle {
-    margin-bottom: 18px;
+.family-text {
+    margin: 18px 0 25px;
 
     font-size: 16px;
 }
 
+.wedding-date {
+    margin: 0 0 18px;
 
-/* Names */
+    font-size: 20px;
 
-.language-container .couple {
-    margin-bottom: 16px;
-}
-
-
-.language-container .couple > div {
-    font-size: clamp(28px, 3vw, 44px);
-
-    line-height: 1.15;
-}
-
-
-.language-container .heart {
-    font-size: 25px !important;
-
-    margin: 8px 0;
-}
-
-
-/* Date */
-
-.language-container .date {
-    margin-bottom: 18px;
-
-    font-size: 15px;
-}
-
-
-/* Button */
-
-.language-container .button {
-    padding: 12px 25px;
-
-    font-size: 14px;
+    color: #8f4634;
 }
 
 
@@ -1022,93 +117,455 @@ body {
    COUNTDOWN
    ========================================= */
 
-.countdown-section {
+.countdown {
+    display: flex;
 
-    min-height: 42vh;
-    min-height: 42dvh;
+    justify-content: center;
+    align-items: center;
 
-    box-sizing: border-box;
+    gap: 14px;
 
-    padding: 18px 20px 25px;
+    margin-top: 5px;
+}
+
+.countdown-box {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 252, 247, 0.9);
+
+    border: 1px solid #e1c9b8;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(100, 55, 35, 0.08);
+}
+
+.countdown-box span {
+    font-size: 30px;
+
+    color: #9e382d;
+}
+
+.countdown-box small {
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #76564b;
+}
+
+
+/* =========================================
+   SECTION HEADING
+   ========================================= */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.section-heading p,
+.section-label {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #a14b38;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 34px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   INVITATION SECTION
+   ========================================= */
+
+.invitation-section {
+    padding: 90px 5%;
+}
+
+.invitation-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   INVITATION CARDS
+   ========================================= */
+
+.invitation-card {
+    min-height: 550px;
+
+    padding: 55px 40px;
 
     display: flex;
 
     flex-direction: column;
 
+    align-items: center;
+
     justify-content: center;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* English */
+
+.english-card {
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf5,
+            #f8eee5
+        );
+
+    border: 1px solid #e2cfc2;
+
+    box-shadow:
+        0 15px 40px rgba(80, 40, 20, 0.08);
+}
+
+
+/* Tamil */
+
+.tamil-card {
+    background:
+        linear-gradient(
+            145deg,
+            #fff7e9,
+            #f9ead1
+        );
+
+    border: 2px solid #c99b3b;
+
+    box-shadow:
+        0 15px 40px rgba(120, 80, 20, 0.10);
+}
+
+
+/* =========================================
+   CARD CONTENT
+   ========================================= */
+
+.card-flower {
+    font-size: 42px;
+
+    margin-bottom: 25px;
+}
+
+.card-label {
+    margin: 0 0 25px;
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    color: #805344;
+}
+
+.invitation-card h3 {
+    margin: 8px 0;
+
+    font-size: clamp(38px, 4vw, 55px);
+
+    font-weight: 500;
+}
+
+.card-heart {
+    font-size: 28px;
+
+    margin: 12px 0;
+}
+
+.card-date {
+    margin: 25px 0;
+
+    font-size: 18px;
+
+    color: #8d4937;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.invitation-button,
+.map-button {
+    display: inline-flex;
 
     align-items: center;
 
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #9e3d2d;
+
+    color: white;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.invitation-button:hover,
+.map-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(100, 35, 20, 0.2);
+}
+
+.tamil-card .invitation-button {
+    background: #a52c25;
+}
+
+
+/* =========================================
+   INVITATION MESSAGE
+   ========================================= */
+
+.message-section {
+    max-width: 1000px;
+
+    margin: 40px auto 100px;
+
+    padding: 80px 60px;
+
     text-align: center;
+
+    border-radius: 25px;
+}
+
+.english-message {
+    background: #fffaf5;
+
+    border: 1px solid #e0cfc4;
+}
+
+.tamil-message {
+    background: #fff4df;
+
+    border: 2px solid #d2a448;
+}
+
+.message-section h2 {
+    margin: 10px 0 25px;
+
+    font-size: 40px;
+
+    font-weight: 500;
+}
+
+.message {
+    max-width: 720px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+}
+
+.message-names {
+    margin-top: 30px;
+
+    font-size: 25px;
+}
+
+.message-names span {
+    color: #c72e45;
+
+    margin: 0 8px;
+}
+
+.message-date {
+    margin-top: 15px;
+
+    color: #98513d;
 }
 
 
-.countdown-label {
-    margin: 0 0 6px;
+/* =========================================
+   TAMIL TEXT
+   ========================================= */
 
-    font-size: 11px;
-
-    letter-spacing: 3px;
+.tamil-text {
+    font-family:
+        "Noto Serif Tamil",
+        "Latha",
+        "Nirmala UI",
+        serif;
 }
 
 
-.countdown-section h2 {
-    margin: 0 0 5px;
+/* =========================================
+   EVENTS
+   ========================================= */
 
-    font-size: clamp(22px, 3vw, 34px);
+.events-section {
+    padding: 80px 5% 100px;
 }
 
+.timeline {
+    max-width: 1100px;
 
-.countdown-date {
-    margin: 0 0 16px;
+    margin: auto;
 
-    font-size: 14px;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
 }
 
+.event-card {
+    background: rgba(255, 252, 247, 0.95);
 
-/* Countdown boxes */
+    border: 1px solid #dfcbbd;
 
-.countdown {
+    border-radius: 25px;
+
+    padding: 45px;
 
     display: flex;
 
-    justify-content: center;
+    gap: 25px;
 
-    gap: 10px;
+    box-shadow:
+        0 15px 35px rgba(80, 40, 20, 0.07);
+}
 
-    width: 100%;
+.wedding-event {
+    border: 2px solid #c89d43;
+}
 
-    max-width: 560px;
+.event-icon {
+    font-size: 45px;
+
+    min-width: 60px;
+}
+
+.event-type {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #9c4a37;
+}
+
+.event-content h3 {
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+.event-date {
+    margin: 15px 0;
+
+    font-size: 18px;
+
+    color: #a34a37;
+}
+
+.event-divider {
+    margin: 15px 0;
+
+    color: #b78929;
+}
+
+.event-content h4 {
+    margin: 0 0 8px;
+
+    font-size: 18px;
+}
+
+.venue-name {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+.venue-address {
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+.map-button {
+    margin-top: 5px;
 }
 
 
-.countdown-box {
+/* =========================================
+   FOOTER
+   ========================================= */
 
-    min-width: 85px;
+.footer {
+    padding: 60px 20px;
 
-    padding: 12px 10px;
+    text-align: center;
 
-    border-radius: 14px;
+    background: #44261e;
 
-    box-sizing: border-box;
+    color: #f8eadb;
 }
 
-
-.countdown-box span {
-
-    font-size: 28px;
-
-    line-height: 1;
+.footer p {
+    margin: 7px;
 }
 
+.footer h2 {
+    margin: 10px 0;
 
-.countdown-box small {
+    font-size: 30px;
 
-    margin-top: 6px;
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 
@@ -1116,151 +573,118 @@ body {
    MOBILE
    ========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
-    .language-container {
+    .hero-section {
+        min-height: 100svh;
 
-        min-height: 57dvh;
-
-        gap: 8px;
-
-        padding: 8px;
-
+        padding: 35px 15px;
     }
 
+    .hero-section h1 {
+        font-size: 43px;
 
-    .language-container .invitation {
-
-        padding: 18px 8px;
-
-        border-radius: 16px;
-
+        line-height: 1.15;
     }
-
-
-    .language-container .symbol {
-
-        font-size: 25px;
-
-        margin-bottom: 6px;
-
-    }
-
-
-    .language-container .subtitle {
-
-        font-size: 11px;
-
-        margin-bottom: 10px;
-
-    }
-
-
-    .language-container .couple > div {
-
-        font-size: clamp(19px, 5vw, 27px);
-
-    }
-
-
-    .language-container .heart {
-
-        font-size: 18px !important;
-
-        margin: 5px 0;
-
-    }
-
-
-    .language-container .date {
-
-        font-size: 10px;
-
-        margin-bottom: 10px;
-
-    }
-
-
-    .language-container .button {
-
-        padding: 9px 12px;
-
-        font-size: 10px;
-
-        white-space: nowrap;
-
-    }
-
-
-    .countdown-section {
-
-        min-height: 43dvh;
-
-        padding: 12px 8px 18px;
-
-    }
-
-
-    .countdown-label {
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    .countdown-section h2 {
-
-        font-size: 21px;
-
-    }
-
-
-    .countdown-date {
-
-        font-size: 12px;
-
-        margin-bottom: 12px;
-
-    }
-
 
     .countdown {
-
-        gap: 6px;
-
-        max-width: 360px;
-
+        gap: 7px;
     }
-
 
     .countdown-box {
-
-        min-width: 0;
-
-        flex: 1;
-
-        padding: 10px 5px;
-
-        border-radius: 10px;
-
+        width: 72px;
+        height: 72px;
     }
-
 
     .countdown-box span {
-
         font-size: 23px;
+    }
 
+    .countdown-box small {
+        font-size: 8px;
     }
 
 
+    .invitation-section {
+        padding: 65px 15px;
+    }
+
+    .invitation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .invitation-card {
+        min-height: 500px;
+
+        padding: 40px 20px;
+    }
+
+
+    .message-section {
+        margin: 25px 15px 70px;
+
+        padding: 55px 22px;
+    }
+
+    .message-section h2 {
+        font-size: 31px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+
+    .events-section {
+        padding: 60px 15px;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        padding: 30px 25px;
+
+        flex-direction: column;
+    }
+
+    .event-icon {
+        min-width: auto;
+    }
+
+    .event-content h3 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 420px) {
+
+    .hero-section h1 {
+        font-size: 37px;
+    }
+
+    .countdown-box {
+        width: 67px;
+        height: 67px;
+    }
+
+    .countdown-box span {
+        font-size: 21px;
+    }
+
     .countdown-box small {
-
         font-size: 7px;
+    }
 
-        letter-spacing: 0.5px;
-
+    .invitation-card h3 {
+        font-size: 36px;
     }
 
 }
