@@ -1,159 +1,441 @@
+/* =========================================
+   GLOBAL RESET
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
-    background: #f5eee4;
+    background: #eee5d8;
+    color: #3b2119;
 }
+
+
+/* =========================================
+   MAIN LANGUAGE CONTAINER
+   ========================================= */
 
 .language-container {
     min-height: 100vh;
+
     display: flex;
-    gap: 20px;
-    padding: 30px;
+    align-items: stretch;
+
+    gap: 24px;
+
+    padding: 24px;
 }
 
+
+/* =========================================
+   COMMON INVITATION CARD
+   ========================================= */
+
 .invitation {
+    position: relative;
+
     flex: 1;
-    min-height: calc(100vh - 60px);
+
+    min-height: calc(100vh - 48px);
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
     text-align: center;
 
-    border-radius: 20px;
-    padding: 50px 30px;
+    overflow: hidden;
+
+    padding: 70px 40px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.invitation:hover {
+    transform: translateY(-5px);
 }
 
 
-/* =========================
+/* =========================================
    ENGLISH INVITATION
-   ========================= */
+   MODERN / ELEGANT
+   ========================================= */
 
 .english-invitation {
-    background: #fffaf3;
-    color: #4a2418;
-    font-family: Georgia, serif;
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #f8eee3
+        );
+
+    color: #402018;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(70, 40, 20, 0.10);
 }
 
-.english-invitation .symbol {
-    font-size: 50px;
-    margin-bottom: 25px;
+
+/* English decorative border */
+
+.english-invitation::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(139, 58, 43, 0.25);
+
+    border-radius: 20px;
+
+    pointer-events: none;
 }
+
+
+/* English top decoration */
+
+.english-invitation::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 35px;
+
+    font-size: 20px;
+
+    color: #a25a45;
+}
+
+
+/* =========================================
+   TAMIL INVITATION
+   TRADITIONAL
+   ========================================= */
+
+.tamil-invitation {
+    background:
+        radial-gradient(
+            circle at top,
+            #fff8ed,
+            #f9e8d0
+        );
+
+    color: #7b241c;
+
+    font-family:
+        "Noto Serif Tamil",
+        "Latha",
+        "Nirmala UI",
+        serif;
+
+    border-radius: 28px;
+
+    border: 3px double #b8860b;
+
+    box-shadow:
+        0 15px 40px rgba(100, 50, 10, 0.12);
+}
+
+
+/* Tamil inner border */
+
+.tamil-invitation::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid #c59b43;
+
+    border-radius: 20px;
+
+    pointer-events: none;
+}
+
+
+/* Tamil decorative top */
+
+.tamil-invitation::after {
+    content: "❈";
+
+    position: absolute;
+
+    top: 30px;
+
+    font-size: 24px;
+
+    color: #b8860b;
+}
+
+
+/* =========================================
+   FLOWER / SYMBOL
+   ========================================= */
+
+.symbol {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 48px;
+
+    margin-bottom: 28px;
+
+    animation: floatFlower 3s ease-in-out infinite;
+}
+
+@keyframes floatFlower {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =========================================
+   SUBTITLE
+   ========================================= */
+
+.subtitle {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 28px;
+
+    letter-spacing: 2px;
+}
+
+
+/* English subtitle */
 
 .english-invitation .subtitle {
-    font-size: 22px;
-    margin-bottom: 30px;
+    font-size: 21px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #795044;
 }
+
+
+/* Tamil subtitle */
+
+.tamil-invitation .subtitle {
+    font-size: 25px;
+
+    letter-spacing: 1px;
+
+    color: #8b281e;
+}
+
+
+/* =========================================
+   COUPLE NAMES
+   ========================================= */
+
+.couple {
+    position: relative;
+
+    z-index: 2;
+
+    line-height: 1.4;
+}
+
+
+/* English names */
 
 .english-invitation .couple {
-    font-size: 42px;
-    line-height: 1.5;
+    font-size: clamp(38px, 4vw, 58px);
+
+    font-weight: normal;
 }
 
-.english-invitation .heart {
-    font-size: 32px;
-    margin: 5px 0;
+
+/* Tamil names */
+
+.tamil-invitation .couple {
+    font-size: clamp(32px, 3.5vw, 50px);
+
+    font-weight: normal;
+}
+
+
+/* =========================================
+   HEART
+   ========================================= */
+
+.heart {
+    margin: 14px 0;
+
+    font-size: 30px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================
+   DATE
+   ========================================= */
+
+.date {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 32px;
+
+    margin-bottom: 34px;
 }
 
 .english-invitation .date {
-    font-size: 20px;
-    margin: 30px 0;
-}
+    font-size: 19px;
 
+    letter-spacing: 1px;
 
-/* =========================
-   TAMIL INVITATION
-   ========================= */
-
-.tamil-invitation {
-    background: #fff4e6;
-    color: #7a2418;
-    font-family: "Noto Serif Tamil", serif;
-
-    border: 3px double #b8860b;
-}
-
-.tamil-invitation .symbol {
-    font-size: 50px;
-    margin-bottom: 25px;
-}
-
-.tamil-invitation .subtitle {
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
-.tamil-invitation .couple {
-    font-size: 38px;
-    line-height: 1.6;
-}
-
-.tamil-invitation .heart {
-    font-size: 32px;
-    margin: 5px 0;
+    color: #684238;
 }
 
 .tamil-invitation .date {
     font-size: 20px;
-    margin: 30px 0;
+
+    color: #7b241c;
 }
 
 
-/* =========================
+/* =========================================
    BUTTON
-   ========================= */
+   ========================================= */
 
 .button {
+    position: relative;
+
+    z-index: 2;
+
     display: inline-block;
 
-    padding: 14px 30px;
+    padding: 15px 34px;
 
-    border-radius: 30px;
+    border-radius: 50px;
 
     text-decoration: none;
 
-    font-size: 17px;
+    font-size: 16px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* English button */
 
 .english-invitation .button {
     background: #8b3a2b;
-    color: white;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(139, 58, 43, 0.25);
 }
+
+
+/* Tamil button */
 
 .tamil-invitation .button {
     background: #9b1c1c;
+
     color: #fff8e7;
+
+    box-shadow:
+        0 8px 20px rgba(155, 28, 28, 0.25);
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-   ========================= */
+   ========================================= */
 
 @media (max-width: 700px) {
 
     .language-container {
         flex-direction: column;
-        padding: 15px;
-        gap: 15px;
+
+        gap: 16px;
+
+        padding: 12px;
     }
 
     .invitation {
         min-height: 90vh;
+
+        padding: 65px 25px;
+    }
+
+    .english-invitation::before,
+    .tamil-invitation::before {
+        inset: 10px;
     }
 
     .english-invitation .couple {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     .tamil-invitation .couple {
         font-size: 32px;
+    }
+
+    .english-invitation .subtitle {
+        font-size: 17px;
+
+        letter-spacing: 3px;
+    }
+
+    .tamil-invitation .subtitle {
+        font-size: 22px;
+    }
+
+    .button {
+        padding: 14px 28px;
     }
 }
