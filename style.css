@@ -902,3 +902,365 @@ body {
     }
 
 }
+/* =========================================
+   HOME PAGE — FIT EVERYTHING IN ONE SCREEN
+   ========================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Main home page */
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+
+/* Language cards */
+
+.language-container {
+    min-height: 58vh;
+    min-height: 58dvh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    padding: 18px 14px 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* Make the two cards compact */
+
+.language-container .invitation {
+    min-height: 0;
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 28px 20px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* Flowers / symbols */
+
+.language-container .symbol {
+    margin-bottom: 12px;
+
+    font-size: 32px;
+}
+
+
+/* Invitation title */
+
+.language-container .subtitle {
+    margin-bottom: 18px;
+
+    font-size: 16px;
+}
+
+
+/* Names */
+
+.language-container .couple {
+    margin-bottom: 16px;
+}
+
+
+.language-container .couple > div {
+    font-size: clamp(28px, 3vw, 44px);
+
+    line-height: 1.15;
+}
+
+
+.language-container .heart {
+    font-size: 25px !important;
+
+    margin: 8px 0;
+}
+
+
+/* Date */
+
+.language-container .date {
+    margin-bottom: 18px;
+
+    font-size: 15px;
+}
+
+
+/* Button */
+
+.language-container .button {
+    padding: 12px 25px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   COUNTDOWN
+   ========================================= */
+
+.countdown-section {
+
+    min-height: 42vh;
+    min-height: 42dvh;
+
+    box-sizing: border-box;
+
+    padding: 18px 20px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.countdown-label {
+    margin: 0 0 6px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.countdown-section h2 {
+    margin: 0 0 5px;
+
+    font-size: clamp(22px, 3vw, 34px);
+}
+
+
+.countdown-date {
+    margin: 0 0 16px;
+
+    font-size: 14px;
+}
+
+
+/* Countdown boxes */
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    max-width: 560px;
+}
+
+
+.countdown-box {
+
+    min-width: 85px;
+
+    padding: 12px 10px;
+
+    border-radius: 14px;
+
+    box-sizing: border-box;
+}
+
+
+.countdown-box span {
+
+    font-size: 28px;
+
+    line-height: 1;
+}
+
+
+.countdown-box small {
+
+    margin-top: 6px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .language-container {
+
+        min-height: 57dvh;
+
+        gap: 8px;
+
+        padding: 8px;
+
+    }
+
+
+    .language-container .invitation {
+
+        padding: 18px 8px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .language-container .symbol {
+
+        font-size: 25px;
+
+        margin-bottom: 6px;
+
+    }
+
+
+    .language-container .subtitle {
+
+        font-size: 11px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .language-container .couple > div {
+
+        font-size: clamp(19px, 5vw, 27px);
+
+    }
+
+
+    .language-container .heart {
+
+        font-size: 18px !important;
+
+        margin: 5px 0;
+
+    }
+
+
+    .language-container .date {
+
+        font-size: 10px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .language-container .button {
+
+        padding: 9px 12px;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .countdown-section {
+
+        min-height: 43dvh;
+
+        padding: 12px 8px 18px;
+
+    }
+
+
+    .countdown-label {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .countdown-section h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .countdown-date {
+
+        font-size: 12px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .countdown {
+
+        gap: 6px;
+
+        max-width: 360px;
+
+    }
+
+
+    .countdown-box {
+
+        min-width: 0;
+
+        flex: 1;
+
+        padding: 10px 5px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .countdown-box span {
+
+        font-size: 23px;
+
+    }
+
+
+    .countdown-box small {
+
+        font-size: 7px;
+
+        letter-spacing: 0.5px;
+
+    }
+
+}
