@@ -1,184 +1,54 @@
 /* =========================================================
-   WEDDING WEBSITE
-   Nanthamil S ♥ Kalaiselvi M
-
-   INSTAGRAM-INSPIRED WEDDING THEME
-   ========================================================= */
-
-
-/* =========================================================
-   GOOGLE FONTS
-   ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
-
-
-/* =========================================================
-   ROOT VARIABLES
-   ========================================================= */
-
-:root {
-
-    /* Main background */
-    --bg: #f3f1ed;
-
-    /* Instagram-style post background */
-    --post-bg: #fffdf9;
-
-    /* Main text */
-    --brown: #2f211d;
-
-    /* Secondary text */
-    --brown-soft: #75655f;
-
-    /* Wedding accent */
-    --red: #a94738;
-
-    --red-dark: #87362c;
-
-    /* Gold accent */
-    --gold: #b99a62;
-
-    --gold-light: #d8bd8a;
-
-    /* Borders */
-    --border: #e5ddd5;
-
-    /* Shadows */
-    --shadow:
-        0 18px 50px rgba(47, 33, 29, 0.08);
-
-    --shadow-hover:
-        0 25px 65px rgba(47, 33, 29, 0.13);
-
-    /* Fonts */
-    --serif:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    --sans:
-        "DM Sans",
-        Arial,
-        sans-serif;
-}
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-* {
-
-    box-sizing: border-box;
-
-    margin: 0;
-
-    padding: 0;
-}
-
-
-html {
-
-    scroll-behavior: smooth;
-
-    scroll-snap-type: y proximity;
-}
-
-
-body {
-
-    margin: 0;
-
-    background: var(--bg);
-
-    color: var(--brown);
-
-    font-family: var(--sans);
-
-    overflow-x: hidden;
-
-    -webkit-font-smoothing: antialiased;
-
-    text-rendering: optimizeLegibility;
-}
-
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-main {
-
-    width: 100%;
-
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   COMMON SECTION
-   ========================================================= */
-
-section {
-
-    position: relative;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    scroll-snap-align: start;
-}
-
-
-/* =========================================================
-   HERO
+   HERO — INSTAGRAM INSPIRED
    ========================================================= */
 
 .hero-section {
-
     min-height: 100svh;
+    height: 100vh;
+
+    position: relative;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
-    padding: 60px 25px;
-
-    background: var(--post-bg);
+    padding: 40px 24px;
 
     overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,0.95) 0%,
+            rgba(249,244,236,0.88) 38%,
+            rgba(244,235,222,0.72) 100%
+        );
 }
 
 
-/* Soft Instagram-style background glow */
+/* Soft Instagram-like glow */
 
 .hero-section::before {
-
     content: "";
 
     position: absolute;
 
-    width: 650px;
-
-    height: 650px;
+    width: 720px;
+    height: 720px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(169, 71, 56, 0.07),
-            transparent 68%
+            rgba(255,255,255,0.9) 0%,
+            rgba(255,255,255,0.35) 45%,
+            transparent 70%
         );
 
     top: 50%;
-
     left: 50%;
 
     transform: translate(-50%, -50%);
@@ -187,81 +57,80 @@ section {
 }
 
 
-/* Secondary decorative glow */
+/* Very subtle warm glow */
 
 .hero-section::after {
-
     content: "";
 
     position: absolute;
 
-    width: 300px;
-
-    height: 300px;
+    width: 500px;
+    height: 500px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(185, 154, 98, 0.08),
+            rgba(183, 86, 65, 0.06),
             transparent 70%
         );
 
-    top: 8%;
-
-    right: 5%;
+    right: -180px;
+    bottom: -180px;
 
     pointer-events: none;
 }
 
 
 .hero-content {
-
     position: relative;
 
     z-index: 2;
 
-    max-width: 1000px;
+    width: min(1100px, 100%);
 
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
 }
 
 
 /* =========================================================
-   HERO LABEL
+   TOP LABEL
    ========================================================= */
 
 .hero-label {
-
     font-family: var(--sans);
 
     font-size: 11px;
 
-    letter-spacing: 0.32em;
+    font-weight: 500;
 
-    color: var(--red);
-
-    margin-bottom: 28px;
+    letter-spacing: 0.34em;
 
     text-transform: uppercase;
 
-    font-weight: 500;
+    color: var(--red);
+
+    margin-bottom: 22px;
 }
 
 
 /* =========================================================
-   HERO FLOWER
+   FLOWER
    ========================================================= */
 
 .hero-flower {
+    font-size: 32px;
 
-    font-size: 38px;
+    line-height: 1;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 
-    animation:
-        floatFlower 4s ease-in-out infinite;
+    animation: floatFlower 4s ease-in-out infinite;
 }
 
 
@@ -269,39 +138,28 @@ section {
 
     0%,
     100% {
-
-        transform: translateY(0) rotate(0deg);
-
+        transform: translateY(0);
     }
 
     50% {
-
-        transform: translateY(-8px) rotate(3deg);
-
+        transform: translateY(-7px);
     }
 }
 
 
 /* =========================================================
-   HERO TITLE
+   COUPLE NAMES
    ========================================================= */
 
 .hero-title {
 
+    margin: 0;
+
+    padding: 0;
+
     font-family: var(--serif);
 
     font-weight: 500;
-
-    font-size:
-        clamp(
-            68px,
-            9vw,
-            145px
-        );
-
-    line-height: 0.80;
-
-    letter-spacing: -0.045em;
 
     color: var(--brown);
 
@@ -311,75 +169,104 @@ section {
 
     align-items: center;
 
-    gap: 6px;
+    justify-content: center;
+
+    gap: 0;
+
+    /*
+       Important:
+       Keep the names inside the viewport.
+    */
+
+    font-size: clamp(
+        64px,
+        8vw,
+        125px
+    );
+
+    line-height: 0.82;
+
+    letter-spacing: -0.045em;
 }
 
 
 .hero-title span {
-
     display: block;
+
+    white-space: nowrap;
 }
 
 
+/* Ampersand */
+
 .hero-title span:nth-child(2) {
 
-    font-size: 0.45em;
+    font-size: 0.42em;
 
     line-height: 1;
 
-    color: var(--red);
-
     font-weight: 400;
+
+    color: var(--red);
 
     margin: 8px 0;
 }
 
 
 /* =========================================================
-   TAMIL NAME
+   TAMIL NAMES
    ========================================================= */
 
 .hero-tamil {
 
-    margin-top: 35px;
+    margin-top: 30px;
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(
-            25px,
-            3.5vw,
-            45px
-        );
+    font-size: clamp(
+        24px,
+        3vw,
+        40px
+    );
+
+    line-height: 1.2;
+
+    font-weight: 500;
 
     color: var(--red);
 
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+
+    max-width: 95%;
+
+    text-align: center;
 }
 
 
 /* =========================================================
-   HERO DATE
+   DATE
    ========================================================= */
 
 .hero-date {
 
-    margin-top: 25px;
+    margin-top: 20px;
 
     font-family: var(--sans);
 
     font-size: 11px;
 
+    font-weight: 500;
+
     letter-spacing: 0.28em;
 
     color: var(--brown-soft);
 
-    font-weight: 500;
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   SCROLL HINT
+   SCROLL
    ========================================================= */
 
 .scroll-hint {
@@ -388,7 +275,7 @@ section {
 
     left: 50%;
 
-    bottom: 32px;
+    bottom: -85px;
 
     transform: translateX(-50%);
 
@@ -398,7 +285,9 @@ section {
 
     align-items: center;
 
-    gap: 8px;
+    gap: 7px;
+
+    font-family: var(--sans);
 
     font-size: 9px;
 
@@ -408,20 +297,17 @@ section {
 
     white-space: nowrap;
 
-    cursor: pointer;
-
-    animation:
-        scrollHint 2.2s ease-in-out infinite;
+    animation: scrollHint 2s ease-in-out infinite;
 }
 
 
 .scroll-arrow {
 
-    font-size: 20px;
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
 
     line-height: 1;
-
-    color: var(--red);
 }
 
 
@@ -429,17 +315,13 @@ section {
 
     0%,
     100% {
+        transform: translate(-50%, 0);
 
-        transform:
-            translate(-50%, 0);
-
-        opacity: 0.45;
+        opacity: .45;
     }
 
     50% {
-
-        transform:
-            translate(-50%, 8px);
+        transform: translate(-50%, 8px);
 
         opacity: 1;
     }
@@ -447,934 +329,7 @@ section {
 
 
 /* =========================================================
-   COMMON SECTION LABEL
-   ========================================================= */
-
-.section-label {
-
-    font-family: var(--sans);
-
-    font-size: 10px;
-
-    letter-spacing: 0.30em;
-
-    color: var(--red);
-
-    text-transform: uppercase;
-
-    margin-bottom: 17px;
-
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   HEADINGS
-   ========================================================= */
-
-h2,
-h3 {
-
-    font-family: var(--serif);
-
-    font-weight: 500;
-
-    color: var(--brown);
-}
-
-
-h2 {
-
-    font-size:
-        clamp(
-            40px,
-            5vw,
-            65px
-        );
-
-    line-height: 1;
-}
-
-
-h3 {
-
-    font-size: 30px;
-
-    line-height: 1.1;
-}
-
-
-/* =========================================================
-   COUNTDOWN SECTION
-   ========================================================= */
-
-.countdown-section {
-
-    min-height: 100svh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 80px 20px;
-
-    background: var(--bg);
-
-    overflow: hidden;
-}
-
-
-/* Decorative circle */
-
-.countdown-section::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-
-    height: 500px;
-
-    border-radius: 50%;
-
-    border: 1px solid
-        rgba(185, 154, 98, 0.12);
-
-    pointer-events: none;
-}
-
-
-.countdown-section h2 {
-
-    margin-bottom: 12px;
-}
-
-
-.countdown-date {
-
-    font-size: 13px;
-
-    letter-spacing: 0.14em;
-
-    color: var(--brown-soft);
-
-    margin-bottom: 42px;
-}
-
-
-/* =========================================================
-   COUNTDOWN
-   ========================================================= */
-
-.countdown {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* =========================================================
-   COUNTDOWN BOX
-   ========================================================= */
-
-.countdown-box {
-
-    width: 105px;
-
-    height: 115px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background: var(--post-bg);
-
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-
-    box-shadow: var(--shadow);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-
-.countdown-box:hover {
-
-    transform:
-        translateY(-6px);
-
-    box-shadow: var(--shadow-hover);
-}
-
-
-.countdown-box span {
-
-    font-family: var(--serif);
-
-    font-size: 42px;
-
-    line-height: 1;
-
-    color: var(--red);
-
-    font-weight: 500;
-}
-
-
-.countdown-box small {
-
-    margin-top: 9px;
-
-    font-size: 8px;
-
-    letter-spacing: 0.20em;
-
-    color: var(--brown-soft);
-
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   COUNTDOWN SCROLL
-   ========================================================= */
-
-.section-scroll {
-
-    position: static;
-
-    transform: none;
-
-    margin-top: 60px;
-
-    animation:
-        scrollHintStatic 2.2s ease-in-out infinite;
-}
-
-
-@keyframes scrollHintStatic {
-
-    0%,
-    100% {
-
-        transform: translateY(0);
-
-        opacity: 0.45;
-    }
-
-    50% {
-
-        transform: translateY(8px);
-
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   INVITATION SECTION
-   ========================================================= */
-
-.invitation-section {
-
-    min-height: 100svh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 80px 20px;
-
-    background: var(--bg);
-}
-
-
-/* =========================================================
-   INVITATION CARD
-   ========================================================= */
-
-.invitation-card {
-
-    width: min(700px, 100%);
-
-    padding: 65px 50px;
-
-    text-align: center;
-
-    background: var(--post-bg);
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    box-shadow: var(--shadow);
-
-    position: relative;
-}
-
-
-/* Top decorative line */
-
-.invitation-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 20px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 45px;
-
-    height: 1px;
-
-    background: var(--gold);
-}
-
-
-.invitation-card h2 {
-
-    margin-bottom: 25px;
-}
-
-
-.invitation-card > p {
-
-    max-width: 600px;
-
-    margin: 0 auto 30px;
-
-    line-height: 1.9;
-
-    color: var(--brown-soft);
-
-    font-size: 14px;
-}
-
-
-.invitation-names {
-
-    font-family: var(--serif);
-
-    font-size: 34px;
-
-    color: var(--brown);
-
-    margin-bottom: 18px;
-}
-
-
-.invitation-names span {
-
-    color: var(--red);
-
-    padding: 0 8px;
-}
-
-
-.invitation-date {
-
-    font-size: 11px;
-
-    letter-spacing: 0.18em;
-
-    color: var(--red);
-
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   EVENTS SECTION
-   ========================================================= */
-
-.events-section {
-
-    min-height: 100svh;
-
-    padding: 90px 20px;
-
-    background: var(--bg);
-}
-
-
-.events-header {
-
-    width: min(720px, 100%);
-
-    margin: 0 auto 45px;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   EVENT CARD
-   ========================================================= */
-
-.event-card {
-
-    width: min(720px, 100%);
-
-    min-height: 500px;
-
-    margin: 0 auto 35px;
-
-    padding: 50px 40px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background: var(--post-bg);
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    box-shadow: var(--shadow);
-
-    transition:
-        transform 0.45s ease,
-        box-shadow 0.45s ease;
-}
-
-
-.event-card:hover {
-
-    transform:
-        translateY(-7px);
-
-    box-shadow: var(--shadow-hover);
-}
-
-
-/* =========================================================
-   EVENT ICON
-   ========================================================= */
-
-.event-icon {
-
-    width: 82px;
-
-    height: 82px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 38px;
-
-    background: #f7f1ea;
-
-    border-radius: 50%;
-
-    margin-bottom: 25px;
-
-    border: 1px solid var(--border);
-}
-
-
-/* =========================================================
-   EVENT TYPE
-   ========================================================= */
-
-.event-type {
-
-    font-size: 9px;
-
-    letter-spacing: 0.30em;
-
-    color: var(--red);
-
-    margin-bottom: 12px;
-
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   EVENT TITLE
-   ========================================================= */
-
-.event-card h3 {
-
-    font-size:
-        clamp(
-            30px,
-            4vw,
-            43px
-        );
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   EVENT DATE
-   ========================================================= */
-
-.event-date {
-
-    font-family: var(--serif);
-
-    font-size: 23px;
-
-    color: var(--red);
-
-    margin-bottom: 8px;
-}
-
-
-/* =========================================================
-   EVENT TIME
-   ========================================================= */
-
-.event-time {
-
-    font-size: 12px;
-
-    letter-spacing: 0.05em;
-
-    color: var(--brown-soft);
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   VENUE
-   ========================================================= */
-
-.venue-name {
-
-    font-family: var(--serif);
-
-    font-size: 23px;
-
-    font-weight: 600;
-
-    margin-bottom: 8px;
-}
-
-
-.venue-address {
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-    color: var(--brown-soft);
-
-    max-width: 400px;
-
-    margin: auto;
-}
-
-
-/* =========================================================
-   MAP BUTTON
-   ========================================================= */
-
-.map-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-top: 22px;
-
-    padding: 13px 22px;
-
-    border-radius: 999px;
-
-    background: var(--brown);
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 10px;
-
-    letter-spacing: 0.06em;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.map-button:hover {
-
-    background: var(--red);
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* =========================================================
-   TIMELINE SECTION
-   ========================================================= */
-
-.timeline-section {
-
-    min-height: 100svh;
-
-    padding: 100px 20px;
-
-    background: var(--post-bg);
-}
-
-
-.timeline-header {
-
-    width: min(800px, 100%);
-
-    margin: 0 auto 70px;
-
-    text-align: center;
-}
-
-
-.timeline {
-
-    position: relative;
-
-    width: min(850px, 100%);
-
-    margin: auto;
-
-    padding: 20px 0;
-}
-
-
-/* =========================================================
-   TIMELINE LINE
-   ========================================================= */
-
-.timeline::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 0;
-
-    bottom: 0;
-
-    width: 1px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--gold),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   TIMELINE ITEM
-   ========================================================= */
-
-.timeline-item {
-
-    position: relative;
-
-    width: 50%;
-
-    padding: 30px 55px;
-
-    margin-bottom: 60px;
-}
-
-
-.timeline-item:nth-child(odd) {
-
-    left: 0;
-
-    text-align: right;
-}
-
-
-.timeline-item:nth-child(even) {
-
-    left: 50%;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   TIMELINE DOT
-   ========================================================= */
-
-.timeline-dot {
-
-    position: absolute;
-
-    top: 42px;
-
-    width: 15px;
-
-    height: 15px;
-
-    border-radius: 50%;
-
-    background: var(--red);
-
-    border: 4px solid var(--post-bg);
-
-    box-shadow:
-        0 0 0 1px var(--red);
-}
-
-
-.timeline-item:nth-child(odd)
-.timeline-dot {
-
-    right: -8px;
-}
-
-
-.timeline-item:nth-child(even)
-.timeline-dot {
-
-    left: -8px;
-}
-
-
-/* =========================================================
-   TIMELINE DATE
-   ========================================================= */
-
-.timeline-date {
-
-    font-size: 9px;
-
-    letter-spacing: 0.20em;
-
-    color: var(--red);
-
-    margin-bottom: 12px;
-
-    font-weight: 500;
-}
-
-
-.timeline-item h3 {
-
-    margin-bottom: 8px;
-}
-
-
-.timeline-item p {
-
-    font-size: 12px;
-
-    color: var(--brown-soft);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-
-    min-height: 60svh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 90px 20px;
-
-    background: var(--bg);
-}
-
-
-/* =========================================================
-   FOOTER HEART
-   ========================================================= */
-
-.footer-heart {
-
-    font-size: 35px;
-
-    color: var(--red);
-
-    margin-bottom: 20px;
-
-    animation:
-        heartbeat 1.8s ease-in-out infinite;
-}
-
-
-@keyframes heartbeat {
-
-    0%,
-    100% {
-
-        transform: scale(1);
-
-    }
-
-    50% {
-
-        transform: scale(1.18);
-
-    }
-}
-
-
-/* =========================================================
-   FOOTER TEXT
-   ========================================================= */
-
-.footer p {
-
-    font-size: 9px;
-
-    letter-spacing: 0.30em;
-
-    color: var(--brown-soft);
-
-    margin-bottom: 15px;
-}
-
-
-.footer h2 {
-
-    font-family: var(--serif);
-
-    font-size:
-        clamp(
-            38px,
-            5vw,
-            55px
-        );
-
-    margin-bottom: 15px;
-}
-
-
-.footer-date {
-
-    color: var(--red) !important;
-}
-
-
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
-
-.reveal {
-
-    opacity: 0;
-
-    transform:
-        translateY(35px)
-        scale(0.98);
-
-    transition:
-        opacity 0.8s ease,
-        transform
-        0.8s
-        cubic-bezier(.22, 1, .36, 1);
-}
-
-
-/* IMPORTANT:
-   JS adds .active when the section enters viewport */
-
-.reveal.active {
-
-    opacity: 1;
-
-    transform:
-        translateY(0)
-        scale(1);
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-
-        scroll-behavior: auto;
-
-        scroll-snap-type: none;
-    }
-
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-    }
-}
-
-
-/* =========================================================
-   TABLET
+   MOBILE
    ========================================================= */
 
 @media (max-width: 800px) {
@@ -1383,156 +338,88 @@ h3 {
 
         min-height: 100svh;
 
-        padding: 40px 20px;
+        height: 100svh;
+
+        padding:
+            30px
+            18px
+            50px;
+    }
+
+
+    .hero-label {
+
+        font-size: 9px;
+
+        letter-spacing: .24em;
+
+        margin-bottom: 18px;
+    }
+
+
+    .hero-flower {
+
+        font-size: 28px;
+
+        margin-bottom: 18px;
     }
 
 
     .hero-title {
 
-        font-size:
-            clamp(
-                55px,
-                16vw,
-                90px
-            );
+        font-size: clamp(
+            52px,
+            15vw,
+            82px
+        );
+
+        line-height: .84;
+    }
+
+
+    .hero-title span {
+
+        white-space: nowrap;
+    }
+
+
+    .hero-title span:nth-child(2) {
+
+        font-size: .42em;
+
+        margin: 7px 0;
     }
 
 
     .hero-tamil {
 
-        font-size: 25px;
+        margin-top: 25px;
+
+        font-size: clamp(
+            20px,
+            6vw,
+            30px
+        );
+
+        line-height: 1.3;
     }
 
 
     .hero-date {
 
-        font-size: 10px;
+        margin-top: 18px;
+
+        font-size: 9px;
+
+        letter-spacing: .20em;
     }
 
 
-    /* Countdown */
+    .scroll-hint {
 
-    .countdown {
+        bottom: -45px;
 
-        gap: 9px;
-    }
-
-
-    .countdown-box {
-
-        width: 82px;
-
-        height: 92px;
-
-        border-radius: 16px;
-    }
-
-
-    .countdown-box span {
-
-        font-size: 32px;
-    }
-
-
-    /* Invitation */
-
-    .invitation-section {
-
-        padding: 70px 18px;
-    }
-
-
-    .invitation-card {
-
-        padding: 60px 28px;
-
-        border-radius: 20px;
-    }
-
-
-    .invitation-names {
-
-        font-size: 28px;
-    }
-
-
-    /* Events */
-
-    .events-section {
-
-        padding: 80px 18px;
-    }
-
-
-    .event-card {
-
-        min-height: 480px;
-
-        padding: 45px 25px;
-
-        border-radius: 18px;
-    }
-
-
-    .event-icon {
-
-        width: 75px;
-
-        height: 75px;
-
-        font-size: 35px;
-    }
-
-
-    /* Timeline */
-
-    .timeline-section {
-
-        padding: 90px 20px;
-    }
-
-
-    .timeline::before {
-
-        left: 12px;
-    }
-
-
-    .timeline-item,
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-
-        width: 100%;
-
-        left: 0;
-
-        text-align: left;
-
-        padding:
-            30px
-            20px
-            30px
-            45px;
-    }
-
-
-    .timeline-item:nth-child(odd)
-    .timeline-dot,
-
-    .timeline-item:nth-child(even)
-    .timeline-dot {
-
-        left: 5px;
-
-        right: auto;
-    }
-
-
-    /* Footer */
-
-    .footer {
-
-        min-height: 55svh;
+        font-size: 8px;
     }
 }
 
@@ -1543,48 +430,31 @@ h3 {
 
 @media (max-width: 480px) {
 
-    .hero-label {
+    .hero-section {
 
-        font-size: 8px;
+        padding-left: 15px;
 
-        letter-spacing: 0.20em;
-
-        margin-bottom: 20px;
-    }
-
-
-    .hero-flower {
-
-        font-size: 30px;
-
-        margin-bottom: 18px;
+        padding-right: 15px;
     }
 
 
     .hero-title {
 
-        font-size:
-            clamp(
-                50px,
-                17vw,
-                75px
-            );
+        font-size: clamp(
+            46px,
+            14.5vw,
+            70px
+        );
 
-        line-height: 0.82;
-    }
-
-
-    .hero-title span:nth-child(2) {
-
-        font-size: 0.42em;
+        line-height: .86;
     }
 
 
     .hero-tamil {
 
-        font-size: 21px;
+        font-size: 19px;
 
-        margin-top: 28px;
+        max-width: 100%;
     }
 
 
@@ -1592,558 +462,12 @@ h3 {
 
         font-size: 8px;
 
-        letter-spacing: 0.20em;
+        letter-spacing: .16em;
     }
 
 
     .scroll-hint {
 
-        bottom: 22px;
-
-        font-size: 8px;
+        bottom: -35px;
     }
-
-
-    /* Countdown */
-
-    .countdown-section {
-
-        padding:
-            70px
-            15px;
-    }
-
-
-    .countdown-section h2 {
-
-        font-size: 39px;
-    }
-
-
-    .countdown-date {
-
-        font-size: 11px;
-
-        margin-bottom: 30px;
-    }
-
-
-    .countdown {
-
-        gap: 7px;
-    }
-
-
-    .countdown-box {
-
-        width: 70px;
-
-        height: 82px;
-
-        border-radius: 14px;
-    }
-
-
-    .countdown-box span {
-
-        font-size: 27px;
-    }
-
-
-    .countdown-box small {
-
-        font-size: 7px;
-
-        letter-spacing: 0.15em;
-    }
-
-
-    /* Invitation */
-
-    .invitation-card {
-
-        padding:
-            55px
-            20px;
-    }
-
-
-    .invitation-card h2 {
-
-        font-size: 39px;
-    }
-
-
-    .invitation-card > p {
-
-        font-size: 13px;
-
-        line-height: 1.8;
-    }
-
-
-    .invitation-names {
-
-        font-size: 25px;
-    }
-
-
-    .invitation-date {
-
-        font-size: 8px;
-
-        letter-spacing: 0.12em;
-    }
-
-
-    /* Events */
-
-    .events-section {
-
-        padding:
-            75px
-            15px;
-    }
-
-
-    .events-header h2 {
-
-        font-size: 42px;
-    }
-
-
-    .event-card {
-
-        min-height: 460px;
-
-        padding:
-            40px
-            20px;
-
-        margin-bottom: 25px;
-    }
-
-
-    .event-icon {
-
-        width: 70px;
-
-        height: 70px;
-
-        font-size: 32px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .event-card h3 {
-
-        font-size: 28px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .event-date {
-
-        font-size: 20px;
-    }
-
-
-    .venue-name {
-
-        font-size: 21px;
-    }
-
-
-    .venue-address {
-
-        font-size: 11px;
-    }
-
-
-    .map-button {
-
-        font-size: 9px;
-
-        padding:
-            12px
-            18px;
-    }
-
-
-    /* Timeline */
-
-    .timeline-section {
-
-        padding:
-            80px
-            18px;
-    }
-
-
-    .timeline-header h2 {
-
-        font-size: 42px;
-    }
-
-
-    .timeline-item {
-
-        margin-bottom: 35px;
-    }
-
-
-    .timeline-item h3 {
-
-        font-size: 28px;
-    }
-
-
-    /* Footer */
-
-    .footer {
-
-        min-height: 50svh;
-
-        padding:
-            80px
-            20px;
-    }
-
-
-    .footer h2 {
-
-        font-size: 35px;
-    }
-
-
-    .footer p {
-
-        font-size: 8px;
-
-        letter-spacing: 0.22em;
-    }
-}
-/* =========================================================
-   INSTAGRAM STYLE POST HEADER
-   ========================================================= */
-
-.post-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 16px 18px;
-    margin-bottom: 25px;
-
-    border-bottom: 1px solid rgba(61, 33, 29, 0.10);
-}
-
-
-.post-profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-
-/* Profile circle */
-
-.profile-circle {
-
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f4c7a1,
-            #c95b52,
-            #8e3027
-        );
-
-    color: #ffffff;
-
-    font-size: 17px;
-
-    border: 2px solid #ffffff;
-
-    box-shadow:
-        0 0 0 1px rgba(169, 64, 50, 0.25);
-}
-
-
-/* Username + subtitle */
-
-.profile-info {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 3px;
-
-    text-align: left;
-}
-
-
-.profile-info strong {
-
-    font-family: var(--sans);
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    color: var(--brown);
-
-    letter-spacing: -0.01em;
-}
-
-
-.profile-info span {
-
-    font-size: 10px;
-
-    color: var(--brown-soft);
-
-    letter-spacing: 0.03em;
-}
-
-
-/* Three-dot menu */
-
-.post-menu {
-
-    font-size: 25px;
-
-    line-height: 1;
-
-    color: var(--brown);
-
-    letter-spacing: 2px;
-
-    cursor: default;
-
-    padding: 5px 2px;
-}
-
-
-/* =========================================================
-   INSTAGRAM POST FEEL
-   ========================================================= */
-
-.hero-section,
-.countdown-section,
-.invitation-section,
-.events-section,
-.timeline-section,
-.footer {
-
-    width: min(100%, 900px);
-
-    margin-left: auto;
-
-    margin-right: auto;
-}
-
-
-/* Subtle separation between posts */
-
-.hero-section::after,
-.countdown-section::after,
-.invitation-section::after,
-.events-section::after,
-.timeline-section::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 8%;
-
-    right: 8%;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            rgba(169, 64, 50, 0.18),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   COUNTDOWN POST
-   ========================================================= */
-
-.countdown-content {
-
-    width: 100%;
-
-    padding:
-        35px
-        25px
-        20px;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   EVENT POST
-   ========================================================= */
-
-.events-section {
-
-    padding:
-        70px
-        25px;
-}
-
-
-.events-header {
-
-    width: 100%;
-
-    margin-bottom: 25px;
-}
-
-
-.event-card {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
-    gap: 12px;
-
-    padding:
-        35px
-        25px;
-
-    border-radius: 22px;
-}
-
-
-/* =========================================================
-   FOOTER POST
-   ========================================================= */
-
-.footer-content {
-
-    width: 100%;
-
-    padding: 30px 25px;
-
-    text-align: center;
-}
-
-
-.footer-content .post-header {
-
-    margin-bottom: 45px;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .post-header {
-
-        padding:
-            14px
-            12px;
-
-        margin-bottom: 18px;
-    }
-
-
-    .profile-circle {
-
-        width: 38px;
-
-        height: 38px;
-
-        font-size: 15px;
-    }
-
-
-    .profile-info strong {
-
-        font-size: 12px;
-    }
-
-
-    .profile-info span {
-
-        font-size: 9px;
-    }
-
-
-    .post-menu {
-
-        font-size: 22px;
-    }
-
-
-    .countdown-content {
-
-        padding:
-            25px
-            10px;
-    }
-
-
-    .events-section {
-
-        padding:
-            60px
-            15px;
-    }
-
-
-    .event-card {
-
-        padding:
-            30px
-            18px;
-    }
-
-
-    .footer-content {
-
-        padding:
-            25px
-            15px;
-    }
-
 }
