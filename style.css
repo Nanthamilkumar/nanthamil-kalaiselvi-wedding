@@ -2077,3 +2077,122 @@ section {
         letter-spacing: 2px;
     }
 }
+/* =========================================================
+   WEDDING COUNTDOWN — BEFORE / AFTER STATES
+   ========================================================= */
+
+#countdown-before,
+#countdown-after {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* Countdown message */
+
+.countdown-message {
+    margin-top: 12px;
+
+    font-family: var(--font-body);
+
+    font-size: 15px;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+}
+
+
+/* Wedding completed state */
+
+#countdown-after {
+    display: none;
+}
+
+
+.wedding-complete .section-label {
+    margin-bottom: 25px;
+}
+
+
+.wedding-complete .hero-flower {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+
+.wedding-complete h2 {
+    color: var(--text-main);
+
+    font-family: var(--font-display);
+
+    font-size: clamp(
+        55px,
+        7vw,
+        92px
+    );
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    text-align: center;
+
+    margin: 0;
+}
+
+
+.wedding-complete-text {
+    margin-top: 8px;
+
+    font-family: var(--font-body);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+}
+
+
+.wedding-complete-text strong {
+    font-weight: 500;
+
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .countdown-message {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .wedding-complete h2 {
+        font-size: clamp(
+            44px,
+            12vw,
+            60px
+        );
+
+        line-height: 0.98;
+    }
+
+    .wedding-complete-text {
+        font-size: 13px;
+        line-height: 1.7;
+        padding: 0 10px;
+    }
+
+}
