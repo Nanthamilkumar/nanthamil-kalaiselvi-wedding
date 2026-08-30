@@ -1,36 +1,57 @@
 /* =========================================================
    WEDDING WEBSITE
    Nanthamil S ♥ Kalaiselvi M
+
+   INSTAGRAM-INSPIRED WEDDING THEME
+   ========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONTS
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 
 /* =========================================================
-   ROOT
+   ROOT VARIABLES
    ========================================================= */
 
 :root {
 
-    --bg: #f5efe7;
-    --bg-soft: #faf7f2;
+    /* Main background */
+    --bg: #f3f1ed;
 
-    --card: rgba(255, 253, 249, 0.78);
+    /* Instagram-style post background */
+    --post-bg: #fffdf9;
 
-    --brown: #3d211d;
-    --brown-soft: #68433b;
+    /* Main text */
+    --brown: #2f211d;
 
-    --red: #a94032;
-    --red-dark: #8e3027;
+    /* Secondary text */
+    --brown-soft: #75655f;
 
-    --gold: #b88942;
-    --gold-light: #d8b978;
+    /* Wedding accent */
+    --red: #a94738;
 
-    --border: rgba(169, 64, 50, 0.20);
+    --red-dark: #87362c;
 
+    /* Gold accent */
+    --gold: #b99a62;
+
+    --gold-light: #d8bd8a;
+
+    /* Borders */
+    --border: #e5ddd5;
+
+    /* Shadows */
     --shadow:
-        0 25px 70px rgba(72, 37, 28, 0.10);
+        0 18px 50px rgba(47, 33, 29, 0.08);
 
+    --shadow-hover:
+        0 25px 65px rgba(47, 33, 29, 0.13);
+
+    /* Fonts */
     --serif:
         "Cormorant Garamond",
         Georgia,
@@ -48,37 +69,38 @@
    ========================================================= */
 
 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
 }
 
 
 html {
+
     scroll-behavior: smooth;
+
+    scroll-snap-type: y proximity;
 }
 
 
 body {
 
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(216, 185, 120, 0.12),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 70%,
-            rgba(169, 64, 50, 0.10),
-            transparent 32%
-        ),
-        var(--bg);
+    margin: 0;
+
+    background: var(--bg);
 
     color: var(--brown);
 
     font-family: var(--sans);
 
     overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
 }
 
 
@@ -87,7 +109,10 @@ body {
    ========================================================= */
 
 main {
+
     width: 100%;
+
+    margin: 0 auto;
 }
 
 
@@ -96,7 +121,14 @@ main {
    ========================================================= */
 
 section {
+
     position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
 }
 
 
@@ -106,7 +138,7 @@ section {
 
 .hero-section {
 
-    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
 
@@ -118,11 +150,13 @@ section {
 
     padding: 60px 25px;
 
+    background: var(--post-bg);
+
     overflow: hidden;
 }
 
 
-/* Decorative glow */
+/* Soft Instagram-style background glow */
 
 .hero-section::before {
 
@@ -139,8 +173,8 @@ section {
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,0.85),
-            transparent 65%
+            rgba(169, 71, 56, 0.07),
+            transparent 68%
         );
 
     top: 50%;
@@ -148,6 +182,35 @@ section {
     left: 50%;
 
     transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* Secondary decorative glow */
+
+.hero-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(185, 154, 98, 0.08),
+            transparent 70%
+        );
+
+    top: 8%;
+
+    right: 5%;
 
     pointer-events: none;
 }
@@ -173,25 +236,32 @@ section {
 
     font-family: var(--sans);
 
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 0.32em;
 
     color: var(--red);
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 
     text-transform: uppercase;
+
+    font-weight: 500;
 }
 
+
+/* =========================================================
+   HERO FLOWER
+   ========================================================= */
 
 .hero-flower {
 
     font-size: 38px;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    animation: floatFlower 4s ease-in-out infinite;
+    animation:
+        floatFlower 4s ease-in-out infinite;
 }
 
 
@@ -199,11 +269,15 @@ section {
 
     0%,
     100% {
-        transform: translateY(0);
+
+        transform: translateY(0) rotate(0deg);
+
     }
 
     50% {
-        transform: translateY(-8px);
+
+        transform: translateY(-8px) rotate(3deg);
+
     }
 }
 
@@ -218,13 +292,14 @@ section {
 
     font-weight: 500;
 
-    font-size: clamp(
-        70px,
-        9vw,
-        145px
-    );
+    font-size:
+        clamp(
+            68px,
+            9vw,
+            145px
+        );
 
-    line-height: 0.78;
+    line-height: 0.80;
 
     letter-spacing: -0.045em;
 
@@ -236,19 +311,27 @@ section {
 
     align-items: center;
 
-    gap: 5px;
+    gap: 6px;
+}
+
+
+.hero-title span {
+
+    display: block;
 }
 
 
 .hero-title span:nth-child(2) {
 
-    font-size: 0.55em;
+    font-size: 0.45em;
 
-    line-height: 0.9;
+    line-height: 1;
 
     color: var(--red);
 
     font-weight: 400;
+
+    margin: 8px 0;
 }
 
 
@@ -262,11 +345,12 @@ section {
 
     font-family: var(--serif);
 
-    font-size: clamp(
-        28px,
-        4vw,
-        48px
-    );
+    font-size:
+        clamp(
+            25px,
+            3.5vw,
+            45px
+        );
 
     color: var(--red);
 
@@ -284,11 +368,13 @@ section {
 
     font-family: var(--sans);
 
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 0.28em;
 
     color: var(--brown-soft);
+
+    font-weight: 500;
 }
 
 
@@ -302,7 +388,7 @@ section {
 
     left: 50%;
 
-    bottom: 35px;
+    bottom: 32px;
 
     transform: translateX(-50%);
 
@@ -312,17 +398,20 @@ section {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 8px;
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
 
     color: var(--brown-soft);
 
     white-space: nowrap;
 
-    animation: scrollHint 2s ease-in-out infinite;
+    cursor: pointer;
+
+    animation:
+        scrollHint 2.2s ease-in-out infinite;
 }
 
 
@@ -331,6 +420,8 @@ section {
     font-size: 20px;
 
     line-height: 1;
+
+    color: var(--red);
 }
 
 
@@ -338,26 +429,32 @@ section {
 
     0%,
     100% {
-        transform: translate(-50%, 0);
-        opacity: .55;
+
+        transform:
+            translate(-50%, 0);
+
+        opacity: 0.45;
     }
 
     50% {
-        transform: translate(-50%, 8px);
+
+        transform:
+            translate(-50%, 8px);
+
         opacity: 1;
     }
 }
 
 
 /* =========================================================
-   SECTION LABEL
+   COMMON SECTION LABEL
    ========================================================= */
 
 .section-label {
 
     font-family: var(--sans);
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 0.30em;
 
@@ -365,38 +462,55 @@ section {
 
     text-transform: uppercase;
 
-    margin-bottom: 16px;
+    margin-bottom: 17px;
+
+    font-weight: 500;
 }
 
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
 
 h2,
 h3 {
 
     font-family: var(--serif);
 
-    font-weight: 600;
+    font-weight: 500;
 
     color: var(--brown);
 }
 
 
 h2 {
-    font-size: clamp(38px, 5vw, 64px);
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            65px
+        );
+
+    line-height: 1;
 }
 
 
 h3 {
+
     font-size: 30px;
+
+    line-height: 1.1;
 }
 
 
 /* =========================================================
-   COUNTDOWN
+   COUNTDOWN SECTION
    ========================================================= */
 
 .countdown-section {
 
-    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
 
@@ -408,30 +522,55 @@ h3 {
 
     text-align: center;
 
-    padding: 100px 25px;
+    padding: 80px 20px;
+
+    background: var(--bg);
+
+    overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.countdown-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(185, 154, 98, 0.12);
+
+    pointer-events: none;
 }
 
 
 .countdown-section h2 {
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 
 .countdown-date {
 
-    font-size: 14px;
+    font-size: 13px;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
 
     color: var(--brown-soft);
 
-    margin-bottom: 40px;
+    margin-bottom: 42px;
 }
 
 
 /* =========================================================
-   COUNTDOWN BOXES
+   COUNTDOWN
    ========================================================= */
 
 .countdown {
@@ -440,11 +579,21 @@ h3 {
 
     justify-content: center;
 
-    gap: 14px;
+    align-items: center;
+
+    gap: 12px;
 
     flex-wrap: wrap;
+
+    position: relative;
+
+    z-index: 2;
 }
 
+
+/* =========================================================
+   COUNTDOWN BOX
+   ========================================================= */
 
 .countdown-box {
 
@@ -460,30 +609,26 @@ h3 {
 
     align-items: center;
 
-    background:
-        rgba(255,255,255,0.70);
+    background: var(--post-bg);
 
     border: 1px solid var(--border);
 
-    border-radius: 22px;
+    border-radius: 18px;
 
-    box-shadow:
-        0 18px 45px rgba(61, 33, 29, 0.08);
-
-    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
 
     transition:
-        transform .4s ease,
-        box-shadow .4s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
 .countdown-box:hover {
 
-    transform: translateY(-8px);
+    transform:
+        translateY(-6px);
 
-    box-shadow:
-        0 25px 55px rgba(61, 33, 29, 0.13);
+    box-shadow: var(--shadow-hover);
 }
 
 
@@ -496,23 +641,27 @@ h3 {
     line-height: 1;
 
     color: var(--red);
+
+    font-weight: 500;
 }
 
 
 .countdown-box small {
 
-    margin-top: 8px;
+    margin-top: 9px;
 
-    font-size: 9px;
+    font-size: 8px;
 
     letter-spacing: 0.20em;
 
     color: var(--brown-soft);
+
+    font-weight: 500;
 }
 
 
 /* =========================================================
-   SECTION SCROLL
+   COUNTDOWN SCROLL
    ========================================================= */
 
 .section-scroll {
@@ -523,7 +672,8 @@ h3 {
 
     margin-top: 60px;
 
-    animation: scrollHintStatic 2s ease-in-out infinite;
+    animation:
+        scrollHintStatic 2.2s ease-in-out infinite;
 }
 
 
@@ -531,24 +681,28 @@ h3 {
 
     0%,
     100% {
+
         transform: translateY(0);
-        opacity: .5;
+
+        opacity: 0.45;
     }
 
     50% {
+
         transform: translateY(8px);
+
         opacity: 1;
     }
 }
 
 
 /* =========================================================
-   INVITATION
+   INVITATION SECTION
    ========================================================= */
 
 .invitation-section {
 
-    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
 
@@ -556,35 +710,55 @@ h3 {
 
     align-items: center;
 
-    padding: 100px 25px;
+    padding: 80px 20px;
+
+    background: var(--bg);
 }
 
 
+/* =========================================================
+   INVITATION CARD
+   ========================================================= */
+
 .invitation-card {
 
-    width: min(900px, 100%);
+    width: min(700px, 100%);
 
-    padding: 90px 80px;
+    padding: 65px 50px;
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.80),
-            rgba(255,249,242,.65)
-        );
+    background: var(--post-bg);
 
-    border:
+    border: 1px solid var(--border);
 
-        1px solid
-        rgba(169,64,50,.18);
-
-    border-radius: 32px;
+    border-radius: 20px;
 
     box-shadow: var(--shadow);
 
-    backdrop-filter: blur(12px);
+    position: relative;
+}
+
+
+/* Top decorative line */
+
+.invitation-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 45px;
+
+    height: 1px;
+
+    background: var(--gold);
 }
 
 
@@ -596,7 +770,7 @@ h3 {
 
 .invitation-card > p {
 
-    max-width: 650px;
+    max-width: 600px;
 
     margin: 0 auto 30px;
 
@@ -604,7 +778,7 @@ h3 {
 
     color: var(--brown-soft);
 
-    font-size: 15px;
+    font-size: 14px;
 }
 
 
@@ -630,119 +804,159 @@ h3 {
 
 .invitation-date {
 
-    font-size: 12px;
+    font-size: 11px;
 
-    letter-spacing: .18em;
+    letter-spacing: 0.18em;
 
     color: var(--red);
+
+    font-weight: 500;
 }
 
 
 /* =========================================================
-   EVENTS
+   EVENTS SECTION
    ========================================================= */
 
 .events-section {
 
-    min-height: 100vh;
+    min-height: 100svh;
 
-    padding: 120px 5vw;
+    padding: 90px 20px;
+
+    background: var(--bg);
 }
 
 
 .events-header {
 
-    max-width: 1200px;
+    width: min(720px, 100%);
 
-    margin: 0 auto 50px;
-}
-
-
-.event-card {
-
-    width: min(1250px, 100%);
-
-    margin: 0 auto 18px;
-
-    min-height: 210px;
-
-    display: grid;
-
-    grid-template-columns:
-        90px
-        1.5fr
-        1fr
-        1.4fr;
-
-    align-items: center;
-
-    gap: 35px;
-
-    padding: 45px;
-
-    background:
-        rgba(255,255,255,.72);
-
-    border:
-
-        1px solid
-        rgba(169,64,50,.18);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 20px 60px
-        rgba(61,33,29,.07);
-
-    backdrop-filter: blur(12px);
-
-    transition:
-        transform .5s ease,
-        box-shadow .5s ease;
-}
-
-
-.event-card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 30px 70px
-        rgba(61,33,29,.12);
-}
-
-
-.event-icon {
-
-    font-size: 48px;
+    margin: 0 auto 45px;
 
     text-align: center;
 }
 
 
+/* =========================================================
+   EVENT CARD
+   ========================================================= */
+
+.event-card {
+
+    width: min(720px, 100%);
+
+    min-height: 500px;
+
+    margin: 0 auto 35px;
+
+    padding: 50px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: var(--post-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+.event-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   EVENT ICON
+   ========================================================= */
+
+.event-icon {
+
+    width: 82px;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+    background: #f7f1ea;
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+
+    border: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   EVENT TYPE
+   ========================================================= */
+
 .event-type {
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: .30em;
+    letter-spacing: 0.30em;
 
     color: var(--red);
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+
+    font-weight: 500;
 }
 
+
+/* =========================================================
+   EVENT TITLE
+   ========================================================= */
 
 .event-card h3 {
 
-    font-size: 31px;
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            43px
+        );
+
+    margin-bottom: 25px;
 }
 
+
+/* =========================================================
+   EVENT DATE
+   ========================================================= */
 
 .event-date {
 
     font-family: var(--serif);
 
-    font-size: 22px;
+    font-size: 23px;
 
     color: var(--red);
 
@@ -750,21 +964,31 @@ h3 {
 }
 
 
+/* =========================================================
+   EVENT TIME
+   ========================================================= */
+
 .event-time {
 
-    font-size: 13px;
+    font-size: 12px;
 
-    letter-spacing: .04em;
+    letter-spacing: 0.05em;
 
     color: var(--brown-soft);
+
+    margin-bottom: 25px;
 }
 
+
+/* =========================================================
+   VENUE
+   ========================================================= */
 
 .venue-name {
 
     font-family: var(--serif);
 
-    font-size: 20px;
+    font-size: 23px;
 
     font-weight: 600;
 
@@ -774,11 +998,15 @@ h3 {
 
 .venue-address {
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.7;
 
     color: var(--brown-soft);
+
+    max-width: 400px;
+
+    margin: auto;
 }
 
 
@@ -794,52 +1022,54 @@ h3 {
 
     justify-content: center;
 
-    margin-top: 18px;
+    margin-top: 22px;
 
-    padding: 13px 20px;
+    padding: 13px 22px;
 
     border-radius: 999px;
 
-    background: var(--red);
+    background: var(--brown);
 
     color: white;
 
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: .06em;
+    letter-spacing: 0.06em;
 
     transition:
-        background .3s ease,
-        transform .3s ease;
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 
 .map-button:hover {
 
-    background: var(--red-dark);
+    background: var(--red);
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
 /* =========================================================
-   TIMELINE
+   TIMELINE SECTION
    ========================================================= */
 
 .timeline-section {
 
-    min-height: 100vh;
+    min-height: 100svh;
 
-    padding: 120px 25px;
+    padding: 100px 20px;
 
+    background: var(--post-bg);
 }
 
 
 .timeline-header {
 
-    width: min(900px, 100%);
+    width: min(800px, 100%);
 
     margin: 0 auto 70px;
 
@@ -859,7 +1089,9 @@ h3 {
 }
 
 
-/* vertical line */
+/* =========================================================
+   TIMELINE LINE
+   ========================================================= */
 
 .timeline::before {
 
@@ -884,6 +1116,10 @@ h3 {
         );
 }
 
+
+/* =========================================================
+   TIMELINE ITEM
+   ========================================================= */
 
 .timeline-item {
 
@@ -913,6 +1149,10 @@ h3 {
 }
 
 
+/* =========================================================
+   TIMELINE DOT
+   ========================================================= */
+
 .timeline-dot {
 
     position: absolute;
@@ -927,34 +1167,42 @@ h3 {
 
     background: var(--red);
 
-    border: 4px solid var(--bg);
+    border: 4px solid var(--post-bg);
 
     box-shadow:
         0 0 0 1px var(--red);
 }
 
 
-.timeline-item:nth-child(odd) .timeline-dot {
+.timeline-item:nth-child(odd)
+.timeline-dot {
 
     right: -8px;
 }
 
 
-.timeline-item:nth-child(even) .timeline-dot {
+.timeline-item:nth-child(even)
+.timeline-dot {
 
     left: -8px;
 }
 
 
+/* =========================================================
+   TIMELINE DATE
+   ========================================================= */
+
 .timeline-date {
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: .20em;
+    letter-spacing: 0.20em;
 
     color: var(--red);
 
     margin-bottom: 12px;
+
+    font-weight: 500;
 }
 
 
@@ -966,7 +1214,7 @@ h3 {
 
 .timeline-item p {
 
-    font-size: 13px;
+    font-size: 12px;
 
     color: var(--brown-soft);
 }
@@ -978,7 +1226,7 @@ h3 {
 
 .footer {
 
-    min-height: 55vh;
+    min-height: 60svh;
 
     display: flex;
 
@@ -988,9 +1236,15 @@ h3 {
 
     text-align: center;
 
-    padding: 100px 25px;
+    padding: 90px 20px;
+
+    background: var(--bg);
 }
 
+
+/* =========================================================
+   FOOTER HEART
+   ========================================================= */
 
 .footer-heart {
 
@@ -1000,7 +1254,8 @@ h3 {
 
     margin-bottom: 20px;
 
-    animation: heartbeat 1.8s ease-in-out infinite;
+    animation:
+        heartbeat 1.8s ease-in-out infinite;
 }
 
 
@@ -1008,20 +1263,28 @@ h3 {
 
     0%,
     100% {
+
         transform: scale(1);
+
     }
 
     50% {
+
         transform: scale(1.18);
+
     }
 }
 
 
+/* =========================================================
+   FOOTER TEXT
+   ========================================================= */
+
 .footer p {
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: .30em;
+    letter-spacing: 0.30em;
 
     color: var(--brown-soft);
 
@@ -1033,7 +1296,12 @@ h3 {
 
     font-family: var(--serif);
 
-    font-size: 45px;
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            55px
+        );
 
     margin-bottom: 15px;
 }
@@ -1046,31 +1314,67 @@ h3 {
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   SCROLL REVEAL
    ========================================================= */
 
 .reveal {
 
     opacity: 0;
 
-    transform: translateY(45px);
+    transform:
+        translateY(35px)
+        scale(0.98);
 
     transition:
-        opacity 1s ease,
-        transform 1s cubic-bezier(.22,1,.36,1);
+        opacity 0.8s ease,
+        transform
+        0.8s
+        cubic-bezier(.22, 1, .36, 1);
 }
 
+
+/* IMPORTANT:
+   JS adds .active when the section enters viewport */
 
 .reveal.active {
 
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 
 /* =========================================================
-   MOBILE
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+        scroll-snap-type: none;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
    ========================================================= */
 
 @media (max-width: 800px) {
@@ -1085,11 +1389,12 @@ h3 {
 
     .hero-title {
 
-        font-size: clamp(
-            55px,
-            16vw,
-            90px
-        );
+        font-size:
+            clamp(
+                55px,
+                16vw,
+                90px
+            );
     }
 
 
@@ -1099,11 +1404,27 @@ h3 {
     }
 
 
+    .hero-date {
+
+        font-size: 10px;
+    }
+
+
+    /* Countdown */
+
+    .countdown {
+
+        gap: 9px;
+    }
+
+
     .countdown-box {
 
-        width: 78px;
+        width: 82px;
 
-        height: 90px;
+        height: 92px;
+
+        border-radius: 16px;
     }
 
 
@@ -1113,43 +1434,57 @@ h3 {
     }
 
 
+    /* Invitation */
+
+    .invitation-section {
+
+        padding: 70px 18px;
+    }
+
+
     .invitation-card {
 
-        padding: 60px 25px;
+        padding: 60px 28px;
 
-        border-radius: 24px;
+        border-radius: 20px;
     }
 
 
     .invitation-names {
 
-        font-size: 27px;
+        font-size: 28px;
     }
 
 
+    /* Events */
+
     .events-section {
 
-        padding: 90px 18px;
+        padding: 80px 18px;
     }
 
 
     .event-card {
 
-        grid-template-columns: 1fr;
+        min-height: 480px;
 
-        gap: 18px;
+        padding: 45px 25px;
 
-        padding: 35px 28px;
-
-        text-align: center;
+        border-radius: 18px;
     }
 
 
     .event-icon {
 
-        font-size: 42px;
+        width: 75px;
+
+        height: 75px;
+
+        font-size: 35px;
     }
 
+
+    /* Timeline */
 
     .timeline-section {
 
@@ -1181,8 +1516,11 @@ h3 {
     }
 
 
-    .timeline-item:nth-child(odd) .timeline-dot,
-    .timeline-item:nth-child(even) .timeline-dot {
+    .timeline-item:nth-child(odd)
+    .timeline-dot,
+
+    .timeline-item:nth-child(even)
+    .timeline-dot {
 
         left: 5px;
 
@@ -1190,9 +1528,11 @@ h3 {
     }
 
 
-    .footer h2 {
+    /* Footer */
 
-        font-size: 35px;
+    .footer {
+
+        min-height: 55svh;
     }
 }
 
@@ -1205,21 +1545,86 @@ h3 {
 
     .hero-label {
 
-        font-size: 9px;
+        font-size: 8px;
 
-        letter-spacing: .22em;
+        letter-spacing: 0.20em;
+
+        margin-bottom: 20px;
+    }
+
+
+    .hero-flower {
+
+        font-size: 30px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .hero-title {
+
+        font-size:
+            clamp(
+                50px,
+                17vw,
+                75px
+            );
+
+        line-height: 0.82;
+    }
+
+
+    .hero-title span:nth-child(2) {
+
+        font-size: 0.42em;
     }
 
 
     .hero-tamil {
 
         font-size: 21px;
+
+        margin-top: 28px;
     }
 
 
     .hero-date {
 
-        font-size: 9px;
+        font-size: 8px;
+
+        letter-spacing: 0.20em;
+    }
+
+
+    .scroll-hint {
+
+        bottom: 22px;
+
+        font-size: 8px;
+    }
+
+
+    /* Countdown */
+
+    .countdown-section {
+
+        padding:
+            70px
+            15px;
+    }
+
+
+    .countdown-section h2 {
+
+        font-size: 39px;
+    }
+
+
+    .countdown-date {
+
+        font-size: 11px;
+
+        margin-bottom: 30px;
     }
 
 
@@ -1235,24 +1640,188 @@ h3 {
 
         height: 82px;
 
-        border-radius: 16px;
+        border-radius: 14px;
     }
 
 
     .countdown-box span {
 
-        font-size: 28px;
+        font-size: 27px;
     }
 
 
     .countdown-box small {
 
         font-size: 7px;
+
+        letter-spacing: 0.15em;
+    }
+
+
+    /* Invitation */
+
+    .invitation-card {
+
+        padding:
+            55px
+            20px;
+    }
+
+
+    .invitation-card h2 {
+
+        font-size: 39px;
+    }
+
+
+    .invitation-card > p {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+
+    .invitation-names {
+
+        font-size: 25px;
+    }
+
+
+    .invitation-date {
+
+        font-size: 8px;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    /* Events */
+
+    .events-section {
+
+        padding:
+            75px
+            15px;
+    }
+
+
+    .events-header h2 {
+
+        font-size: 42px;
+    }
+
+
+    .event-card {
+
+        min-height: 460px;
+
+        padding:
+            40px
+            20px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .event-icon {
+
+        width: 70px;
+
+        height: 70px;
+
+        font-size: 32px;
+
+        margin-bottom: 20px;
     }
 
 
     .event-card h3 {
 
-        font-size: 27px;
+        font-size: 28px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .event-date {
+
+        font-size: 20px;
+    }
+
+
+    .venue-name {
+
+        font-size: 21px;
+    }
+
+
+    .venue-address {
+
+        font-size: 11px;
+    }
+
+
+    .map-button {
+
+        font-size: 9px;
+
+        padding:
+            12px
+            18px;
+    }
+
+
+    /* Timeline */
+
+    .timeline-section {
+
+        padding:
+            80px
+            18px;
+    }
+
+
+    .timeline-header h2 {
+
+        font-size: 42px;
+    }
+
+
+    .timeline-item {
+
+        margin-bottom: 35px;
+    }
+
+
+    .timeline-item h3 {
+
+        font-size: 28px;
+    }
+
+
+    /* Footer */
+
+    .footer {
+
+        min-height: 50svh;
+
+        padding:
+            80px
+            20px;
+    }
+
+
+    .footer h2 {
+
+        font-size: 35px;
+    }
+
+
+    .footer p {
+
+        font-size: 8px;
+
+        letter-spacing: 0.22em;
     }
 }
