@@ -3,7 +3,7 @@
    Nanthamil S ♥ Kalaiselvi M
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 
 /* =========================================================
@@ -12,23 +12,24 @@
 
 :root {
 
-    --bg: #f5eee5;
+    --bg: #f5efe7;
     --bg-soft: #faf7f2;
-    --card: rgba(255, 252, 247, 0.82);
 
-    --brown: #3c211d;
-    --brown-soft: #68453d;
+    --card: rgba(255, 253, 249, 0.78);
 
-    --wine: #9f3d32;
-    --wine-dark: #7e2d27;
+    --brown: #3d211d;
+    --brown-soft: #68433b;
 
-    --gold: #b88a45;
-    --gold-light: #d8bb83;
+    --red: #a94032;
+    --red-dark: #8e3027;
 
-    --border: rgba(159, 61, 50, 0.20);
+    --gold: #b88942;
+    --gold-light: #d8b978;
+
+    --border: rgba(169, 64, 50, 0.20);
 
     --shadow:
-        0 25px 70px rgba(73, 42, 32, 0.10);
+        0 25px 70px rgba(72, 37, 28, 0.10);
 
     --serif:
         "Cormorant Garamond",
@@ -39,10 +40,6 @@
         "DM Sans",
         Arial,
         sans-serif;
-
-    --tamil:
-        "Noto Serif Tamil",
-        serif;
 }
 
 
@@ -51,9 +48,9 @@
    ========================================================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 
@@ -64,49 +61,30 @@ html {
 
 body {
 
-    min-height: 100vh;
-
     background:
         radial-gradient(
-            circle at 15% 15%,
-            rgba(255,255,255,0.85),
-            transparent 28%
+            circle at 15% 20%,
+            rgba(216, 185, 120, 0.12),
+            transparent 30%
         ),
         radial-gradient(
-            circle at 90% 75%,
-            rgba(210,150,130,0.18),
-            transparent 30%
+            circle at 85% 70%,
+            rgba(169, 64, 50, 0.10),
+            transparent 32%
         ),
         var(--bg);
 
     color: var(--brown);
 
-    font-family: var(--serif);
+    font-family: var(--sans);
 
     overflow-x: hidden;
 }
 
 
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            transparent 40%,
-            rgba(86, 46, 38, 0.035)
-        );
-
-    z-index: -1;
-}
-
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 main {
     width: 100%;
@@ -114,43 +92,11 @@ main {
 
 
 /* =========================================================
-   COMMON
+   COMMON SECTION
    ========================================================= */
 
 section {
     position: relative;
-}
-
-
-.section-label {
-
-    font-family: var(--sans);
-
-    font-size: 11px;
-
-    letter-spacing: 0.30em;
-
-    text-transform: uppercase;
-
-    color: var(--wine);
-
-    margin-bottom: 18px;
-}
-
-
-h1,
-h2,
-h3 {
-    font-family: var(--serif);
-
-    font-weight: 600;
-
-    color: var(--brown);
-}
-
-
-p {
-    line-height: 1.7;
 }
 
 
@@ -160,7 +106,7 @@ p {
 
 .hero-section {
 
-    min-height: 100svh;
+    min-height: 100vh;
 
     display: flex;
 
@@ -170,11 +116,13 @@ p {
 
     text-align: center;
 
-    padding: 70px 24px;
+    padding: 60px 25px;
 
     overflow: hidden;
 }
 
+
+/* Decorative glow */
 
 .hero-section::before {
 
@@ -182,49 +130,24 @@ p {
 
     position: absolute;
 
-    width: 520px;
+    width: 650px;
 
-    height: 520px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.80),
-            transparent 68%
-        );
-
-    top: -180px;
-
-    left: -180px;
-
-    pointer-events: none;
-}
-
-
-.hero-section::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-
-    height: 500px;
+    height: 650px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(194,116,91,0.14),
-            transparent 70%
+            rgba(255,255,255,0.85),
+            transparent 65%
         );
 
-    right: -180px;
+    top: 50%;
 
-    bottom: -150px;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
 
     pointer-events: none;
 }
@@ -232,29 +155,19 @@ p {
 
 .hero-content {
 
-    width: min(1100px, 100%);
-
     position: relative;
 
     z-index: 2;
 
-    animation: heroReveal 1.4s ease both;
+    max-width: 1000px;
+
+    width: 100%;
 }
 
 
-@keyframes heroReveal {
-
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* =========================================================
+   HERO LABEL
+   ========================================================= */
 
 .hero-label {
 
@@ -262,19 +175,21 @@ p {
 
     font-size: 12px;
 
-    letter-spacing: 0.38em;
+    letter-spacing: 0.32em;
 
-    color: var(--wine);
+    color: var(--red);
 
-    margin-bottom: 28px;
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
 }
 
 
 .hero-flower {
 
-    font-size: 32px;
+    font-size: 38px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     animation: floatFlower 4s ease-in-out infinite;
 }
@@ -293,7 +208,27 @@ p {
 }
 
 
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
 .hero-title {
+
+    font-family: var(--serif);
+
+    font-weight: 500;
+
+    font-size: clamp(
+        70px,
+        9vw,
+        145px
+    );
+
+    line-height: 0.78;
+
+    letter-spacing: -0.045em;
+
+    color: var(--brown);
 
     display: flex;
 
@@ -301,55 +236,75 @@ p {
 
     align-items: center;
 
-    line-height: 0.82;
-
-    font-size: clamp(70px, 10vw, 150px);
-
-    letter-spacing: -0.045em;
-
-    margin-bottom: 35px;
+    gap: 5px;
 }
 
 
 .hero-title span:nth-child(2) {
 
-    font-size: 0.48em;
+    font-size: 0.55em;
 
-    line-height: 1;
+    line-height: 0.9;
+
+    color: var(--red);
 
     font-weight: 400;
-
-    margin: 15px 0;
 }
 
+
+/* =========================================================
+   TAMIL NAME
+   ========================================================= */
 
 .hero-tamil {
 
-    font-family: var(--tamil);
+    margin-top: 35px;
 
-    font-size: clamp(23px, 3vw, 38px);
+    font-family: var(--serif);
 
-    color: var(--wine);
+    font-size: clamp(
+        28px,
+        4vw,
+        48px
+    );
 
-    margin-bottom: 30px;
+    color: var(--red);
+
+    letter-spacing: 0.02em;
 }
 
 
+/* =========================================================
+   HERO DATE
+   ========================================================= */
+
 .hero-date {
+
+    margin-top: 25px;
 
     font-family: var(--sans);
 
     font-size: 12px;
 
-    letter-spacing: 0.25em;
+    letter-spacing: 0.28em;
 
     color: var(--brown-soft);
 }
 
 
+/* =========================================================
+   SCROLL HINT
+   ========================================================= */
+
 .scroll-hint {
 
-    margin-top: 65px;
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 35px;
+
+    transform: translateX(-50%);
 
     display: flex;
 
@@ -357,25 +312,23 @@ p {
 
     align-items: center;
 
-    gap: 9px;
-
-    font-family: var(--sans);
+    gap: 7px;
 
     font-size: 10px;
 
-    letter-spacing: 0.20em;
+    letter-spacing: 0.22em;
 
     color: var(--brown-soft);
 
-    animation: scrollHint 2.5s ease-in-out infinite;
+    white-space: nowrap;
+
+    animation: scrollHint 2s ease-in-out infinite;
 }
 
 
 .scroll-arrow {
 
-    font-family: var(--serif);
-
-    font-size: 22px;
+    font-size: 20px;
 
     line-height: 1;
 }
@@ -385,14 +338,55 @@ p {
 
     0%,
     100% {
-        transform: translateY(0);
-        opacity: 0.65;
+        transform: translate(-50%, 0);
+        opacity: .55;
     }
 
     50% {
-        transform: translateY(8px);
+        transform: translate(-50%, 8px);
         opacity: 1;
     }
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.section-label {
+
+    font-family: var(--sans);
+
+    font-size: 11px;
+
+    letter-spacing: 0.30em;
+
+    color: var(--red);
+
+    text-transform: uppercase;
+
+    margin-bottom: 16px;
+}
+
+
+h2,
+h3 {
+
+    font-family: var(--serif);
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+
+h2 {
+    font-size: clamp(38px, 5vw, 64px);
+}
+
+
+h3 {
+    font-size: 30px;
 }
 
 
@@ -402,47 +396,43 @@ p {
 
 .countdown-section {
 
-    min-height: 100svh;
+    min-height: 100vh;
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
-
     justify-content: center;
+
+    align-items: center;
 
     text-align: center;
 
-    padding: 100px 24px;
+    padding: 100px 25px;
 }
 
 
 .countdown-section h2 {
 
-    font-size: clamp(42px, 6vw, 76px);
-
-    line-height: 0.95;
-
-    margin-bottom: 18px;
-
-    letter-spacing: -0.025em;
+    margin-bottom: 10px;
 }
 
 
 .countdown-date {
 
-    font-family: var(--sans);
-
-    color: var(--brown-soft);
-
-    font-size: 13px;
+    font-size: 14px;
 
     letter-spacing: 0.12em;
 
-    margin-bottom: 45px;
+    color: var(--brown-soft);
+
+    margin-bottom: 40px;
 }
 
+
+/* =========================================================
+   COUNTDOWN BOXES
+   ========================================================= */
 
 .countdown {
 
@@ -458,32 +448,33 @@ p {
 
 .countdown-box {
 
-    width: 118px;
+    width: 105px;
 
-    height: 128px;
+    height: 115px;
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
-
     justify-content: center;
 
+    align-items: center;
+
     background:
-        rgba(255,255,255,0.68);
+        rgba(255,255,255,0.70);
 
     border: 1px solid var(--border);
 
     border-radius: 22px;
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        0 18px 45px rgba(61, 33, 29, 0.08);
 
     backdrop-filter: blur(10px);
 
     transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+        transform .4s ease,
+        box-shadow .4s ease;
 }
 
 
@@ -492,38 +483,62 @@ p {
     transform: translateY(-8px);
 
     box-shadow:
-        0 30px 65px rgba(73,42,32,0.16);
+        0 25px 55px rgba(61, 33, 29, 0.13);
 }
 
 
 .countdown-box span {
 
-    font-size: 46px;
+    font-family: var(--serif);
+
+    font-size: 42px;
 
     line-height: 1;
 
-    color: var(--wine);
-
-    font-weight: 500;
+    color: var(--red);
 }
 
 
 .countdown-box small {
 
-    margin-top: 9px;
-
-    font-family: var(--sans);
+    margin-top: 8px;
 
     font-size: 9px;
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.20em;
 
     color: var(--brown-soft);
 }
 
 
+/* =========================================================
+   SECTION SCROLL
+   ========================================================= */
+
 .section-scroll {
-    margin-top: 65px;
+
+    position: static;
+
+    transform: none;
+
+    margin-top: 60px;
+
+    animation: scrollHintStatic 2s ease-in-out infinite;
+}
+
+
+@keyframes scrollHintStatic {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
 }
 
 
@@ -533,15 +548,15 @@ p {
 
 .invitation-section {
 
-    min-height: 100svh;
+    min-height: 100vh;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
 
-    padding: 100px 24px;
+    align-items: center;
+
+    padding: 100px 25px;
 }
 
 
@@ -549,68 +564,33 @@ p {
 
     width: min(900px, 100%);
 
-    padding: clamp(45px, 7vw, 90px);
+    padding: 90px 80px;
 
     text-align: center;
 
     background:
         linear-gradient(
-            145deg,
-            rgba(255,255,255,0.82),
-            rgba(255,249,242,0.68)
+            135deg,
+            rgba(255,255,255,.80),
+            rgba(255,249,242,.65)
         );
 
-    border: 1px solid var(--border);
+    border:
 
-    border-radius: 35px;
+        1px solid
+        rgba(169,64,50,.18);
+
+    border-radius: 32px;
 
     box-shadow: var(--shadow);
 
     backdrop-filter: blur(12px);
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-.invitation-card::before {
-
-    content: "✦";
-
-    position: absolute;
-
-    top: 30px;
-
-    left: 35px;
-
-    color: var(--gold);
-
-    font-size: 18px;
-}
-
-
-.invitation-card::after {
-
-    content: "✦";
-
-    position: absolute;
-
-    bottom: 30px;
-
-    right: 35px;
-
-    color: var(--gold);
-
-    font-size: 18px;
 }
 
 
 .invitation-card h2 {
 
-    font-size: clamp(42px, 6vw, 65px);
-
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 
@@ -620,39 +600,41 @@ p {
 
     margin: 0 auto 30px;
 
-    font-family: var(--sans);
-
-    font-size: 14px;
+    line-height: 1.9;
 
     color: var(--brown-soft);
+
+    font-size: 15px;
 }
 
 
 .invitation-names {
 
-    font-size: 28px;
+    font-family: var(--serif);
 
-    margin-bottom: 20px;
+    font-size: 34px;
+
+    color: var(--brown);
+
+    margin-bottom: 18px;
 }
 
 
 .invitation-names span {
 
-    color: var(--wine);
+    color: var(--red);
 
-    margin: 0 8px;
+    padding: 0 8px;
 }
 
 
 .invitation-date {
 
-    font-family: var(--sans);
-
     font-size: 12px;
 
-    letter-spacing: 0.12em;
+    letter-spacing: .18em;
 
-    color: var(--wine);
+    color: var(--red);
 }
 
 
@@ -662,10 +644,9 @@ p {
 
 .events-section {
 
-    min-height: 100svh;
+    min-height: 100vh;
 
-    padding: 110px 5vw;
-
+    padding: 120px 5vw;
 }
 
 
@@ -673,57 +654,51 @@ p {
 
     max-width: 1200px;
 
-    margin: 0 auto 55px;
+    margin: 0 auto 50px;
 }
 
-
-.events-header h2,
-.timeline-header h2 {
-
-    font-size: clamp(50px, 7vw, 82px);
-
-    line-height: 0.9;
-}
-
-
-/* =========================================================
-   EVENT CARD
-   ========================================================= */
 
 .event-card {
 
-    width: min(1200px, 100%);
+    width: min(1250px, 100%);
 
-    margin: 0 auto 25px;
+    margin: 0 auto 18px;
 
-    padding: 45px 50px;
+    min-height: 210px;
 
     display: grid;
 
     grid-template-columns:
         90px
-        1.3fr
+        1.5fr
         1fr
-        1.2fr;
-
-    gap: 35px;
+        1.4fr;
 
     align-items: center;
 
+    gap: 35px;
+
+    padding: 45px;
+
     background:
-        rgba(255,255,255,0.74);
+        rgba(255,255,255,.72);
 
-    border: 1px solid var(--border);
+    border:
 
-    border-radius: 30px;
+        1px solid
+        rgba(169,64,50,.18);
 
-    box-shadow: var(--shadow);
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(61,33,29,.07);
 
     backdrop-filter: blur(12px);
 
     transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
+        transform .5s ease,
+        box-shadow .5s ease;
 }
 
 
@@ -732,69 +707,54 @@ p {
     transform: translateY(-8px);
 
     box-shadow:
-        0 35px 80px rgba(73,42,32,0.14);
+        0 30px 70px
+        rgba(61,33,29,.12);
 }
 
 
 .event-icon {
 
-    width: 68px;
+    font-size: 48px;
 
-    height: 68px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 35px;
-
-    background: var(--bg);
-
-    border-radius: 50%;
-
-    border: 1px solid var(--border);
+    text-align: center;
 }
 
 
 .event-type {
 
-    font-family: var(--sans);
-
     font-size: 10px;
 
-    letter-spacing: 0.30em;
+    letter-spacing: .30em;
 
-    color: var(--wine);
+    color: var(--red);
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
 .event-card h3 {
 
     font-size: 31px;
-
-    line-height: 1;
 }
 
 
 .event-date {
 
-    color: var(--wine);
+    font-family: var(--serif);
 
-    font-size: 18px;
+    font-size: 22px;
 
-    margin-bottom: 7px;
+    color: var(--red);
+
+    margin-bottom: 8px;
 }
 
 
 .event-time {
 
-    font-family: var(--sans);
-
     font-size: 13px;
+
+    letter-spacing: .04em;
 
     color: var(--brown-soft);
 }
@@ -802,25 +762,29 @@ p {
 
 .venue-name {
 
+    font-family: var(--serif);
+
+    font-size: 20px;
+
     font-weight: 600;
 
-    font-size: 17px;
-
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 }
 
 
 .venue-address {
 
-    font-family: var(--sans);
-
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.7;
 
     color: var(--brown-soft);
 }
 
+
+/* =========================================================
+   MAP BUTTON
+   ========================================================= */
 
 .map-button {
 
@@ -836,25 +800,25 @@ p {
 
     border-radius: 999px;
 
-    background: var(--wine);
+    background: var(--red);
 
     color: white;
 
     text-decoration: none;
 
-    font-family: var(--sans);
-
     font-size: 11px;
 
+    letter-spacing: .06em;
+
     transition:
-        background 0.3s ease,
-        transform 0.3s ease;
+        background .3s ease,
+        transform .3s ease;
 }
 
 
 .map-button:hover {
 
-    background: var(--wine-dark);
+    background: var(--red-dark);
 
     transform: translateY(-3px);
 }
@@ -866,9 +830,9 @@ p {
 
 .timeline-section {
 
-    min-height: 100svh;
+    min-height: 100vh;
 
-    padding: 120px 24px;
+    padding: 120px 25px;
 
 }
 
@@ -877,21 +841,25 @@ p {
 
     width: min(900px, 100%);
 
-    margin: 0 auto 75px;
+    margin: 0 auto 70px;
+
+    text-align: center;
 }
 
 
 .timeline {
 
-    width: min(900px, 100%);
+    position: relative;
+
+    width: min(850px, 100%);
 
     margin: auto;
 
-    position: relative;
-
-    padding-left: 55px;
+    padding: 20px 0;
 }
 
+
+/* vertical line */
 
 .timeline::before {
 
@@ -899,7 +867,7 @@ p {
 
     position: absolute;
 
-    left: 12px;
+    left: 50%;
 
     top: 0;
 
@@ -921,13 +889,27 @@ p {
 
     position: relative;
 
-    padding: 0 0 90px;
+    width: 50%;
+
+    padding: 30px 55px;
+
+    margin-bottom: 60px;
 }
 
 
-.timeline-item:last-child {
+.timeline-item:nth-child(odd) {
 
-    padding-bottom: 0;
+    left: 0;
+
+    text-align: right;
+}
+
+
+.timeline-item:nth-child(even) {
+
+    left: 50%;
+
+    text-align: left;
 }
 
 
@@ -935,54 +917,42 @@ p {
 
     position: absolute;
 
-    left: -50px;
+    top: 42px;
 
-    top: 2px;
+    width: 15px;
 
-    width: 26px;
-
-    height: 26px;
+    height: 15px;
 
     border-radius: 50%;
 
-    background: var(--bg);
+    background: var(--red);
 
-    border: 1px solid var(--gold);
+    border: 4px solid var(--bg);
 
+    box-shadow:
+        0 0 0 1px var(--red);
 }
 
 
-.timeline-dot::after {
+.timeline-item:nth-child(odd) .timeline-dot {
 
-    content: "";
+    right: -8px;
+}
 
-    position: absolute;
 
-    width: 7px;
+.timeline-item:nth-child(even) .timeline-dot {
 
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--wine);
-
-    top: 50%;
-
-    left: 50%;
-
-    transform: translate(-50%, -50%);
+    left: -8px;
 }
 
 
 .timeline-date {
 
-    font-family: var(--sans);
+    font-size: 10px;
 
-    font-size: 11px;
+    letter-spacing: .20em;
 
-    letter-spacing: 0.20em;
-
-    color: var(--wine);
+    color: var(--red);
 
     margin-bottom: 12px;
 }
@@ -990,15 +960,11 @@ p {
 
 .timeline-item h3 {
 
-    font-size: clamp(32px, 5vw, 50px);
-
     margin-bottom: 8px;
 }
 
 
 .timeline-item p {
-
-    font-family: var(--sans);
 
     font-size: 13px;
 
@@ -1012,7 +978,7 @@ p {
 
 .footer {
 
-    min-height: 70svh;
+    min-height: 55vh;
 
     display: flex;
 
@@ -1022,19 +988,19 @@ p {
 
     text-align: center;
 
-    padding: 100px 24px;
+    padding: 100px 25px;
 }
 
 
 .footer-heart {
 
-    color: var(--wine);
+    font-size: 35px;
 
-    font-size: 32px;
+    color: var(--red);
 
     margin-bottom: 20px;
 
-    animation: heartbeat 2s infinite;
+    animation: heartbeat 1.8s ease-in-out infinite;
 }
 
 
@@ -1053,38 +1019,34 @@ p {
 
 .footer p {
 
-    font-family: var(--sans);
-
     font-size: 10px;
 
-    letter-spacing: 0.30em;
+    letter-spacing: .30em;
 
-    color: var(--wine);
+    color: var(--brown-soft);
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 
 .footer h2 {
 
-    font-size: clamp(45px, 7vw, 75px);
+    font-family: var(--serif);
 
-    line-height: 0.95;
+    font-size: 45px;
 
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 
-.footer .footer-date {
+.footer-date {
 
-    color: var(--brown-soft);
-
-    margin: 0;
+    color: var(--red) !important;
 }
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
    ========================================================= */
 
 .reveal {
@@ -1095,11 +1057,11 @@ p {
 
     transition:
         opacity 1s ease,
-        transform 1s cubic-bezier(.2,.7,.2,1);
+        transform 1s cubic-bezier(.22,1,.36,1);
 }
 
 
-.reveal.visible {
+.reveal.active {
 
     opacity: 1;
 
@@ -1117,51 +1079,31 @@ p {
 
         min-height: 100svh;
 
-        padding: 60px 18px;
+        padding: 40px 20px;
     }
 
 
     .hero-title {
 
-        font-size: clamp(58px, 17vw, 100px);
+        font-size: clamp(
+            55px,
+            16vw,
+            90px
+        );
     }
 
 
     .hero-tamil {
 
-        font-size: 22px;
-
-        line-height: 1.6;
-    }
-
-
-    .countdown-section {
-
-        min-height: 100svh;
-
-        padding: 80px 18px;
-    }
-
-
-    .countdown-section h2 {
-
-        font-size: 46px;
-    }
-
-
-    .countdown {
-
-        gap: 9px;
+        font-size: 25px;
     }
 
 
     .countdown-box {
 
-        width: 76px;
+        width: 78px;
 
-        height: 92px;
-
-        border-radius: 16px;
+        height: 90px;
     }
 
 
@@ -1171,66 +1113,23 @@ p {
     }
 
 
-    .countdown-box small {
-
-        font-size: 7px;
-    }
-
-
-    .invitation-section {
-
-        min-height: auto;
-
-        padding: 80px 18px;
-    }
-
-
     .invitation-card {
 
-        padding: 55px 25px;
+        padding: 60px 25px;
 
-        border-radius: 25px;
-    }
-
-
-    .invitation-card h2 {
-
-        font-size: 43px;
-    }
-
-
-    .invitation-card > p {
-
-        font-size: 13px;
+        border-radius: 24px;
     }
 
 
     .invitation-names {
 
-        font-size: 22px;
-
-        line-height: 1.7;
+        font-size: 27px;
     }
 
 
     .events-section {
 
-        min-height: auto;
-
         padding: 90px 18px;
-    }
-
-
-    .events-header {
-
-        margin-bottom: 35px;
-    }
-
-
-    .events-header h2,
-    .timeline-header h2 {
-
-        font-size: 58px;
     }
 
 
@@ -1238,61 +1137,63 @@ p {
 
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 18px;
 
-        padding: 32px 25px;
+        padding: 35px 28px;
 
-        border-radius: 25px;
+        text-align: center;
     }
 
 
     .event-icon {
 
-        width: 58px;
-
-        height: 58px;
-
-        font-size: 29px;
-    }
-
-
-    .event-card h3 {
-
-        font-size: 32px;
+        font-size: 42px;
     }
 
 
     .timeline-section {
 
-        min-height: auto;
-
-        padding: 100px 25px;
-    }
-
-
-    .timeline {
-
-        padding-left: 45px;
+        padding: 90px 20px;
     }
 
 
     .timeline::before {
 
-        left: 10px;
+        left: 12px;
     }
 
 
-    .timeline-dot {
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
 
-        left: -44px;
+        width: 100%;
+
+        left: 0;
+
+        text-align: left;
+
+        padding:
+            30px
+            20px
+            30px
+            45px;
     }
 
 
-    .footer {
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
 
-        min-height: 70svh;
+        left: 5px;
+
+        right: auto;
     }
 
+
+    .footer h2 {
+
+        font-size: 35px;
+    }
 }
 
 
@@ -1300,31 +1201,31 @@ p {
    SMALL PHONES
    ========================================================= */
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
 
     .hero-label {
 
         font-size: 9px;
 
-        letter-spacing: 0.25em;
-    }
-
-
-    .hero-title {
-
-        font-size: 60px;
+        letter-spacing: .22em;
     }
 
 
     .hero-tamil {
 
-        font-size: 18px;
+        font-size: 21px;
     }
 
 
     .hero-date {
 
-        font-size: 10px;
+        font-size: 9px;
+    }
+
+
+    .countdown {
+
+        gap: 7px;
     }
 
 
@@ -1332,7 +1233,9 @@ p {
 
         width: 70px;
 
-        height: 88px;
+        height: 82px;
+
+        border-radius: 16px;
     }
 
 
@@ -1342,15 +1245,14 @@ p {
     }
 
 
-    .countdown-section h2 {
+    .countdown-box small {
 
-        font-size: 39px;
+        font-size: 7px;
     }
 
 
-    .footer h2 {
+    .event-card h3 {
 
-        font-size: 47px;
+        font-size: 27px;
     }
-
 }
